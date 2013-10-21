@@ -1,0 +1,225 @@
+/* Page part styles (sub theme: keep the file) */
+
+
+// TODO: Kirjoita tyylit uusiksi
+/* Html */
+html {
+	.preset-html;
+}
+
+/* Body */
+body {
+	@media screen, handheld, projection, tv {
+		.content-center;
+		.bg-color-fix(@body-color);
+		margin: 0px;
+		padding: 0px;
+	}
+	.preset-body;
+}
+
+/* Page */
+#page {
+	@media screen, handheld, projection, tv {
+		.content-center;
+		.bg-color-fix(@page-color);
+	}
+	.preset-page;
+}
+
+/* Section */
+.section {
+	position: relative;
+	//.float-fix;
+	@media screen, handheld, projection, tv {
+		margin-bottom: @section-margin;
+		&:last-child, 
+		&:empty {
+			margin-bottom: 0px;
+		}
+	}
+	.preset-section;
+}
+
+/* Section header */
+#section-header {
+	@media screen, handheld, projection, tv {
+		.bg-color-fix(@header-color);
+	}
+	@media print {
+		border-bottom: 2px solid @color-grayscale-4;
+		margin-bottom: @print-section-margin;
+		padding-bottom: @print-paragraph-margin;
+	}
+	.preset-section-header;
+}
+
+/* Section content */
+#section-content {
+	@media screen, handheld, projection, tv {
+		.bg-color-fix(@content-color);
+	}
+	.preset-section-content;
+}
+
+/* Section footer */
+#section-footer {
+	@media screen, handheld, projection, tv {
+		.bg-color-fix(@footer-color);
+	}
+	@media print {
+		border-top: 2px solid @color-grayscale-4;
+		margin-top: @print-section-margin;
+		padding-top: @print-paragraph-margin;
+	}
+	.preset-section-footer;
+}
+
+/* Zone wrapper */
+.zone-wrapper {
+	&:last-child, 
+	&:empty {
+		margin-bottom: 0px;
+	}
+	@media screen, handheld, projection, tv {
+		.content-center;
+		margin-bottom: @zone-margin;
+	}
+	@media print {
+		margin-bottom: @print-zone-margin;
+	}
+}
+
+/* Zone */
+.zone {
+	position: relative;
+	&:last-child, 
+	&:empty {
+		margin-bottom: 0px;
+	}
+	@media screen, handheld, projection, tv {
+		margin-bottom: @zone-margin;
+		padding-left: @gutter-width;
+		padding-right: @gutter-width;
+	}
+	@media print {
+		margin-bottom: @print-zone-margin;
+	}
+	.preset-zone;
+}
+
+/* Region */
+.region {
+	position: relative;
+	&:last-child, 
+	&:empty {
+		margin-bottom: 0px;
+	}
+	@media screen, handheld, projection, tv {
+		margin-bottom: @region-margin;
+	}
+	@media print {
+		margin-bottom: @print-region-margin;
+	}
+	.preset-region;
+}
+
+/* Block */
+.block {
+	&:last-child, 
+	&:empty {
+		margin-bottom: 0px;
+	}
+	@media screen, handheld, projection, tv {
+		margin-bottom: @block-margin;
+	}
+	@media print {
+		margin-bottom: @print-block-margin;
+	}
+	.preset-block;
+}
+
+/* Remove unwanted bottom margins */
+#region-page-top, 
+#region-page-bottom {
+	margin-bottom: 0px;
+}
+#section-header, 
+#section-footer {
+	.zone-wrapper, 
+	.zone, 
+	.region, 
+	.block {
+		margin-bottom: 0px;
+	}
+}
+
+/* Put the footer to the bottom of the page on short pages (apply to the html element) */
+.fixed-footer(@fixed-footer-height, @fixed-footer-margin: @zone-margin) {
+	&, 
+	body {
+		height: 100%;
+		margin: 0px;
+		padding: 0px;
+	}
+	#page {
+		height: auto;
+		min-height: 100%;
+		position: relative;
+	}
+	#section-footer {
+		bottom: 0px;
+		left: 0px;
+		position: absolute;
+		width: 100%;
+		z-index: 1;
+	}
+	#section-content {
+		padding-bottom: (@fixed-footer-height + @fixed-footer-margin);
+	}
+	#section-footer {
+		height: @fixed-footer-height;
+	}
+}
+
+/* Add page background for shorter pages (apply the html element) */
+.fixed-footer-page-background {
+	&.layout-default, 
+	&.layout-narrow {
+		#page {
+			background-position: center top;
+			background-repeat: repeat-y;
+		}
+	}
+	&.layout-default {
+		#page {
+			background-image: @fixed-footer-background-default;
+		}
+	}
+	&.layout-narrow {
+		#page {
+			background-image: @fixed-footer-background-narrow;
+		}
+	}
+	&.layout-fluid {
+		#page {
+			.bg-color-fix(@content-color);
+		}
+	}
+}
+
+/* Add full width background for shorter pages (apply the html element) */
+.fixed-footer-full-width-background {
+	body {
+		.bg-color-fix(@content-color);
+	}
+}
+
+
+/* Fix the Webkit 1px rounding error: http://philfreo.com/blog/fixing-safaris-1px-background-image-centering-problem/ *
+@media screen AND (-webkit-min-device-pixel-ratio: 0), handheld AND (-webkit-min-device-pixel-ratio: 0), projection AND (-webkit-min-device-pixel-ratio: 0), tv AND (-webkit-min-device-pixel-ratio: 0) {
+	body {
+		background-position: 50.001% 0;
+	}
+}
+*/

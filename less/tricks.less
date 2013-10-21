@@ -1,0 +1,165 @@
+/* Common CSS tricks (sub theme: keep the file) */
+
+
+/* Floating content fix */
+.float-fix {
+	zoom: 1; /* For IE 6/7 (triggers hasLayout) */
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+/* Content centering */
+.content-center {
+	text-align: center;
+	& > * {
+		margin-right: auto;
+		margin-left: auto;
+		text-align: left;
+	}
+}
+
+/* Float left */
+.float-left {
+	float: left;
+}
+
+/* Float right */
+.float-right {
+	float: right;
+}
+
+/* Clear both */
+.clear-both {
+	clear: both;
+}
+
+/* Text hiding */
+.text-hide {
+	overflow: hidden;
+	text-indent: -999px;
+	position: relative;
+}
+
+/* No line wraps */
+.no-wrap {
+	white-space: nowrap;
+}
+
+/* Ellipsis for long text lines */
+.ellipsis {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+/* No focus rectangle */
+.no-focus {
+	&:focus { 
+		outline: none; 
+	}
+}
+
+/* Linear list */
+.list-linear {
+	li {
+		display: block;
+		list-style: none;
+		margin-left: 0px;
+	}
+}
+
+/* Floating list */
+.list-float {
+	.float-fix;
+	li, 
+	ul,
+	ol {
+		float: left;
+	}
+	li {
+		display: block;
+		list-style: none;
+		margin-left: 0px;
+	}
+}
+
+/* Inline list */
+.list-inline {
+	li, 
+	ul,
+	ol {
+		display: inline;
+	}
+	li {
+		list-style: none;
+		margin-left: 0px;
+	}
+}
+
+/* Inline block list */
+.list-inline-block {
+	li, 
+	ul,
+	ol {
+		display: inline-block;
+	}
+	li {
+		list-style: none;
+		margin-left: 0px;
+	}
+}
+	
+/* Linear table */
+.table-linear {
+	&, 
+	thead,
+	tbody, 
+	tr, 
+	td, 
+	th {
+		display: block;
+	}
+	/*
+	td, 
+	th {
+		border: 0px !important;
+		margin: 0px !important;
+		padding: 0px !important;
+	}
+	tr {
+		border-bottom: 1px solid @brand-color-2;
+		padding-bottom: (@y - 1px);
+		padding-top: @y;
+	}
+	*/
+}
+
+/* Alpha color fixes for IE8 */
+.color-fix(@color) when (iscolor(@color)) {
+	color: rgb(red(@color), green(@color), blue(@color));
+	color: @color;
+}
+.bg-color-fix(@color) when (iscolor(@color)) {
+	background-color: rgb(red(@color), green(@color), blue(@color));
+	background-color: @color;
+}
+.border-color-fix(@color) when (iscolor(@color)) {
+	border-color: rgb(red(@color), green(@color), blue(@color));
+	border-color: @color;
+}
+
+/* Background alpha color IE8 fix *
+.bg-alpha-color-ie8(@color) {
+	background-color: rgb(red(@color), green(@color), blue(@color)); // Fallback for older browsers
+	background-color: @color;
+	@ieFilterColor: argb(@color);
+	zoom: 1; // IE8 fix / hasLayout
+	background-color: transparent\9; // IE8 fix
+	-ms-filter:  "progid:DXImageTransform.Microsoft.gradient(startColorstr=@{ieFilterColor}, endColorstr=@{ieFilterColor})"; // IE 8+
+	filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{ieFilterColor}, endColorstr=@{ieFilterColor})"; // IE 6 & 7
+}
+*/
+	

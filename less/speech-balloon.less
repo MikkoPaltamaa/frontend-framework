@@ -1,0 +1,179 @@
+/* Speech balloon styles (sub theme: keep the file) */
+
+
+/* See http://nicolasgallagher.com/pure-css-speech-balloons/ */
+
+// TODO: Päivitä top, bottom jne. luokat jQuery-pluginin perusteella
+/* Speech balloon */
+.speech-balloon {
+	// TODO: Halutaanko mukaan jatkossa?
+	//display: none;
+	.bg-color-fix(@speech-balloon-color);
+	.color-fix(@speech-balloon-text-color);
+	font-family: @speech-balloon-font-family;
+	font-size: @speech-balloon-font-size;
+	font-weight: @speech-balloon-font-weight;
+	line-height: @speech-balloon-line-height;
+	margin: 0px;
+	padding-top: @speech-balloon-padding-vertical;
+	padding-right: @speech-balloon-padding-horizontal;
+	padding-bottom: @speech-balloon-padding-vertical;
+	padding-left: @speech-balloon-padding-horizontal;
+	position: absolute;
+	visibility: hidden;
+	width: @speech-balloon-width;
+	z-index: 100;
+	// TODO: Halutaanko mukaan jatkossa?
+	/*
+	&:hover {
+		display: block;
+	}
+	*/
+	.preset-speech-balloon;
+	@media print {
+		display: none !important;
+		/*
+		&:hover {
+			display: none !important;
+		}
+		*/
+	}
+}
+
+/* Speech balloon on top */
+.speech-balloon-top {
+	.speech-balloon;
+	.speech-balloon-tip(bottom);
+	bottom: 100%;
+	left: 50%;
+	margin-left: (-@speech-balloon-width / 2 - @speech-balloon-padding-horizontal);
+	.preset-speech-balloon-top;
+}
+
+/* Speech balloon on right */
+.speech-balloon-right {
+	.speech-balloon;
+	.speech-balloon-tip(left);
+	left: 100%;
+	top: 0px;
+	.preset-speech-balloon-right;
+}
+
+/* Speech balloon on bottom */
+.speech-balloon-bottom {
+	.speech-balloon;
+	.speech-balloon-tip(top);
+	left: 50%;
+	margin-left: (-@speech-balloon-width / 2 - @speech-balloon-padding-horizontal);
+	top: 100%;
+	.preset-speech-balloon-bottom;
+}
+
+/* Speech balloon on left */
+.speech-balloon-left {
+	.speech-balloon;
+	.speech-balloon-tip(right);
+	right: 100%;
+	top: 0px;
+	.preset-speech-balloon-left;
+}
+
+// TODO: Tarvitaanko?
+.speech-balloon-target {
+	position: relative;
+}
+
+// TODO: Halutaanko mukaan jatkossa?
+.speech-balloon-display-on-hover {
+	&:hover {
+		.speech-balloon,
+		.speech-balloon-top,
+		.speech-balloon-right,
+		.speech-balloon-bottom,
+		.speech-balloon-left {
+			display: block;
+		}
+	}
+}
+
+/* Speech balloon tip */
+.speech-balloon-tip(@side: bottom, @color: @speech-balloon-color, @width: @speech-balloon-tip-width, @height: @speech-balloon-tip-height) {
+	&:after {
+		border-style: solid;
+		content: "";
+		display: block;
+		position: absolute;
+		width: 0px;
+	}
+}
+.speech-balloon-tip(@side: bottom, @color: @speech-balloon-color, @width: @speech-balloon-tip-width, @height: @speech-balloon-tip-height) when (@side = top) {
+	margin-top: @speech-balloon-margin-vertical;
+	&:after {
+		border-color: rgb(red(@color), green(@color), blue(@color)) transparent;
+		border-color: @color transparent;
+		border-width: 0px (@width / 2) @height (@width / 2);
+		bottom: 100%;
+		left: 50%;
+		margin-left: (-@width / 2);
+	}
+}
+.speech-balloon-tip(@side: bottom, @color: @speech-balloon-color, @width: @speech-balloon-tip-width, @height: @speech-balloon-tip-height) when (@side = right) {
+	margin-right: @speech-balloon-margin-horizontal;
+	&:after {
+		border-color: transparent rgb(red(@color), green(@color), blue(@color));
+		border-color: transparent @color;
+		border-width: (@height / 2) 0px (@height / 2) @width;
+		left: 100%;
+		top: @y;
+	}
+}
+.speech-balloon-tip(@side: bottom, @color: @speech-balloon-color, @width: @speech-balloon-tip-width, @height: @speech-balloon-tip-height) when (@side = bottom) {
+	margin-bottom: @speech-balloon-margin-vertical;
+	&:after {
+		border-color: rgb(red(@color), green(@color), blue(@color)) transparent;
+		border-color: @color transparent;
+		border-width: @height (@width / 2) 0px (@width / 2);
+		left: 50%;
+		margin-left: (-@width / 2);
+		top: 100%;
+	}
+}
+.speech-balloon-tip(@side: bottom, @color: @speech-balloon-color, @width: @speech-balloon-tip-width, @height: @speech-balloon-tip-height) when (@side = left) {
+	margin-left: @speech-balloon-margin-horizontal;
+	&:after {
+		border-color: transparent rgb(red(@color), green(@color), blue(@color));
+		border-color: transparent @color;
+		border-width: (@height / 2) @width (@height / 2) 0px;
+		right: 100%;
+		top: @y;
+	}
+}
+
+// TODO: Korjailtava vai poistettava?
+/* Print styles *
+@media print {
+
+	/* Speech balloon *
+	.speech-balloon {
+		display: none !important;
+		visibility: hidden !important;
+		&:hover {
+			display: none !important;
+			visibility: hidden !important;
+		}
+	}
+	.speech-balloon-display-on-hover {
+		&:hover {
+			.speech-balloon,
+			.speech-balloon-top,
+			.speech-balloon-right,
+			.speech-balloon-bottom,
+			.speech-balloon-left {
+				display: none !important;
+				visibility: hidden !important;
+			}
+		}
+	}
+
+}
+*/

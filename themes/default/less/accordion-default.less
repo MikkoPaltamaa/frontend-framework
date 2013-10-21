@@ -1,0 +1,98 @@
+/* Accordion styles (sub theme: replace the file) */
+
+
+// TODO: Kirjoita tyylit uusiksi
+/* Accordion settings */
+@accordion-font-family: @body-font-family;
+@accordion-font-size: @body-font-size;
+@accordion-font-weight: bold;
+@accordion-line-height: @body-line-height;
+@accordion-color: transparent;
+@accordion-color-hover: transparent;
+@accordion-color-active: transparent;
+@accordion-color-disabled: transparent;
+@accordion-text-color: @body-text-color;
+@accordion-text-color-hover: @accordion-text-color;
+@accordion-text-color-active: @accordion-text-color;
+@accordion-text-color-disabled: @color-6;
+@accordion-border-color: @color-5;
+@accordion-border-color-hover: @accordion-border-color;
+@accordion-border-color-active: @accordion-border-color;
+@accordion-border-color-disabled: @color-3;
+@accordion-border-width: 0px;
+@accordion-border-style: solid;
+@accordion-border-style-active: solid;
+
+
+/* Accordion preset */
+.preset-accordion {
+	.accordion-title {
+		background-color: @accordion-color;
+		border: @accordion-border-width @accordion-border-style @accordion-border-color;
+		font-weight: bold;
+		margin-bottom: @paragraph-margin;
+		&:first-child {
+			border-top: none;
+		}
+		&:hover {
+			background-color: @accordion-color-hover;
+			a {
+				&,
+				&:visited,
+				&:hover,
+				&:active {
+					color: @accordion-text-color-hover;
+				}
+			}
+		}
+		&:active,
+		&.active {
+			background-color: @accordion-color-active;
+			border: @accordion-border-width @accordion-border-style-active @accordion-border-color-active;
+			a {
+				&,
+				&:visited,
+				&:hover,
+				&:active {
+					// TODO: Switch to Font Awesome
+					background-image: url('@{path-img-default}accordion-expanded.png');
+					color: @accordion-text-color-active;
+				}
+			}
+		}
+		&:disabled,
+		&.disabled {
+			background-color: @accordion-color-disabled;
+			a {
+				&,
+				&:visited,
+				&:hover,
+				&:active {
+					// TODO: Switch to Font Awesome
+					background-image: url('@{path-img-default}accordion-expanded.png');
+					color: @accordion-text-color-disabled;
+				}
+			}
+		}
+		a {
+			&,
+			&:visited,
+			&:hover,
+			&:active {
+				// TODO: Switch to Font Awesome
+				background-image: url('@{path-img-default}accordion-collapsed.png');
+				color: @accordion-text-color;
+				font-family: @accordion-font-family;
+				font-size: @accordion-font-size;
+				font-weight: @accordion-font-weight;
+				line-height: (@accordion-line-height - 2 * @accordion-border-width);
+				padding: 0px 0px 0px (2 * @x - 2 * @accordion-border-width);
+			}
+		}
+	}
+	.accordion-content {
+		margin-bottom: @paragraph-margin;
+		padding-left: (2 * @x);
+	}
+}
+	

@@ -1,0 +1,73 @@
+/* Link styles (sub theme: keep the file) */
+
+
+// TODO: Kirjoita tyylit uusiksi
+/* Link */
+.link {
+	.preset-link;
+}
+
+
+/* Action link */
+.link-action {
+	&:visited {
+		color: @link-color;
+	}
+	.preset-link-action;
+}
+
+
+/* Unmarked link */
+.link-unmarked {
+	&,
+	&:visited,
+	&:active {
+		color: @body-text-color;
+		text-decoration: none;
+	}
+	&:hover {
+		color: @link-color-hover;
+		text-decoration: @link-text-decoration-hover;
+	}
+	.preset-link-unmarked;
+}
+
+
+/* More link */
+.link-more {
+	&,
+	a {
+		.link-action;
+	}
+	.preset-link-more;
+}
+
+/* More link Drupal adapter */
+.node-link {
+	.link-more;
+}
+
+
+/* Less link */
+.link-less {
+	&,
+	a {
+		.link-action;
+	}
+	.preset-link-less;
+}
+
+
+/* All link */
+.link-all {
+	&,
+	a {
+		.link-action;
+	}
+	.preset-link-all;
+}
+
+/* All link Drupal adapter */
+.more-link {
+	.link-all;
+}

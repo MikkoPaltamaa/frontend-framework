@@ -1,0 +1,184 @@
+/* Tabs styles (sub theme: keep the file) */
+
+
+// TODO: Kirjoita tyylit uusiksi
+/* Tabs */
+.tabs {
+	.preset-tabs;
+}
+
+/* Tabs links */
+.tabs-links {
+	.float-fix;
+	.list-linear;
+	border-bottom: @tabs-links-border-bottom-width solid @tabs-links-border-bottom-color;
+	height: @tabs-links-height;
+	//height: (@tabs-links-height - @tabs-links-border-bottom-width);
+	//line-height: (@tabs-links-height - @tabs-links-border-bottom-width);
+	padding: @tabs-links-padding;
+	&, 
+	&:last-child {
+		margin-bottom: (2 * @y - @tabs-links-border-bottom-width);
+	}
+	a {
+		line-height: @tabs-links-line-height;
+		&, 
+		&:visited, 
+		&:hover, 
+		&:active {
+			.no-focus;
+			background-color: @tabs-links-color;
+			color: @tabs-links-text-color;
+			cursor: pointer;
+			display: block;
+			padding: @tabs-links-link-padding-vertical @tabs-links-link-padding-horizontal;
+			//padding: @tabs-links-link-padding-vertical @tabs-links-link-padding-horizontal (@tabs-links-link-padding-vertical - @tabs-links-border-bottom-width) @tabs-links-link-padding-horizontal;
+			text-decoration: none;
+		}
+	}
+	li {
+		float: left;
+		font-family: @tabs-links-font-family;
+		font-size: @tabs-links-font-size;
+		font-weight: @tabs-links-font-weight;
+		line-height: @tabs-links-line-height;
+		margin: 0px 0px 0px @tabs-links-link-margin;
+		&:first-child {
+			margin-left: 0px;
+		}
+		&:hover {
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				background-color: @tabs-links-color-hover;
+				color: @tabs-links-text-color-hover;
+			}
+		}
+		&.active {
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				background-color: @tabs-links-color-active;
+				color: @tabs-links-text-color-active;
+				padding-bottom: @tabs-links-link-padding-vertical;
+			}
+		}
+		&.disabled {
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				background-color: @tabs-links-color-disabled !important;
+				color: @tabs-links-text-color-disabled !important;
+			}
+		}
+	}
+	/* Drupal fix starts */
+	li {
+		a, 
+		a:visited, 
+		a:hover, 
+		a:active {
+			&.active {
+				background-color: @tabs-links-color-active;
+				color: @tabs-links-text-color-active;
+				padding-bottom: @tabs-links-link-padding-vertical;
+			}
+		}
+	}
+	/* Drupal fix ends */
+	.preset-tabs-links;
+}
+
+/* Panel tabs links */
+.tabs-links-panel {
+	.float-fix;
+	.list-linear;
+	border-bottom: 0px;
+	height: @tabs-links-panel-height;
+	line-height: @tabs-links-panel-height;
+	padding: @tabs-links-panel-padding;
+	&, 
+	&:last-child {
+		margin-bottom: 0px;
+	}
+	a {
+		&, 
+		&:visited, 
+		&:hover,  
+		&:active {
+			.no-focus;
+			background-color: @tabs-links-panel-color;
+			color: @tabs-links-panel-text-color;
+			cursor: pointer;
+			display: block;
+			padding: @tabs-links-panel-link-padding-vertical @tabs-links-panel-link-padding-horizontal;
+			text-decoration: none;
+		}
+	}
+	li {
+		float: left;
+		font-family: @tabs-links-panel-font-family;
+		font-size: @tabs-links-panel-font-size;
+		font-weight: @tabs-links-panel-font-weight;
+		line-height: @tabs-links-panel-line-height;
+		margin: 0px 0px 0px @tabs-links-panel-link-margin;
+		&:first-child {
+			margin-left: 0px;
+		}
+		&:hover {
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				background-color: @tabs-links-panel-color-hover;
+				color: @tabs-links-panel-text-color-hover;
+			}
+		}
+		&.active {
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				background-color: @tabs-links-panel-color-active;
+				color: @tabs-links-panel-text-color-active;
+				padding-bottom: @tabs-links-panel-link-padding-vertical;
+			}
+		}
+		&.disabled {
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				background-color: @tabs-links-panel-color-disabled !important;
+				color: @tabs-links-panel-text-color-disabled !important;
+			}
+		}
+	}
+	/* Drupal fix starts */
+	li {
+		a.active { 
+			&, 
+			&:visited, 
+			&:hover, 
+			&:active {
+				background-color: @tabs-links-panel-color-active;
+				color: @tabs-links-panel-text-color-active;
+				padding-bottom: @tabs-links-panel-link-padding-vertical;
+			}
+		}
+	}
+	/* Drupal fix ends */
+	.preset-tabs-links-panel;
+}
+
+/* Tabs content */
+.tabs-content {
+	display: none;
+	&.active {
+		display: block;
+	}
+	.preset-tabs-content;
+}

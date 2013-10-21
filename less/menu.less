@@ -1,0 +1,476 @@
+/* Menu styles (sub theme: keep the file) */
+
+
+// TODO: Kirjoita tyylit uusiksi
+/* Menu */
+.menu {
+	.preset-menu;
+}
+
+/* Menu item */
+.menu-item {
+	.preset-menu-item;
+}
+
+/* Menu item Drupal adapter */
+.menu {
+	li {
+		.menu-item;
+	}
+}
+
+/* Linear menu - allekkain, ilman bulletteja */
+.menu-linear {
+	.menu;
+	.list-linear;
+	li {
+		&.active {
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				.color-fix(@menu-linear-text-color-active);
+				font-style: @menu-linear-font-style-active;
+				font-weight: @menu-linear-font-weight-active;
+			}
+		}
+	}
+	.preset-menu-linear;
+}
+
+/* Inline menu -  vierekkäin, ilman bulletteja */
+.menu-inline {
+	.menu;
+	.list-inline;
+	li {
+		white-space: nowrap;
+		margin-left: @menu-inline-item-margin;
+		&:first-child {
+			margin-left: 0px;
+		}
+		&.active {
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				.color-fix(@menu-linear-text-color-active);
+				font-style: @menu-inline-font-style-active;
+				font-weight: @menu-inline-font-weight-active;
+			}
+		}
+	}
+	.menu-hide-sub-items;
+	.preset-menu-inline;
+}
+
+/* Basic menu - allekkain sisennettynä, ilman bulletteja */
+.menu-basic {
+	.menu;
+	.list-linear;
+	font-family: @menu-basic-font-family;
+	font-size: @menu-basic-font-size;
+	font-weight: @menu-basic-font-weight;
+	line-height: @menu-basic-line-height;
+	li {
+		margin-bottom: @menu-basic-item-margin-vertical;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+		> a {
+			.no-focus;
+			//cursor: pointer;
+			&, 
+			&:visited, 
+			&:hover, 
+			&:active {
+				.color-fix(@menu-basic-text-color);
+				text-decoration: @menu-basic-text-decoration;
+			}
+			&:hover {
+				.color-fix(@menu-basic-text-color-hover);
+				text-decoration: @menu-basic-text-decoration-hover;
+			}
+		}
+		&.active {
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				.color-fix(@menu-basic-text-color-active);
+				font-style: @menu-basic-font-style-active;
+				font-weight: @menu-basic-font-weight-active;
+			}
+			> a:hover {
+				.color-fix(@menu-basic-text-color-hover);
+				text-decoration: @menu-basic-text-decoration-hover;
+			}
+		}
+	}
+	.menu-add-margins(@menu-basic-item-margin-horizontal);
+	.preset-menu-basic;
+}
+
+/* Tree menu - manu basic plus ikonit */
+.menu-tree {
+	.menu;
+	.list-linear;
+	.menu-add-margins(@menu-tree-item-margin);
+	font-family: @menu-tree-font-family;
+	font-size: @menu-tree-font-size;
+	font-weight: @menu-tree-font-weight;
+	line-height: @menu-tree-line-height;
+	li {
+		> a {
+			.no-focus;
+			//cursor: pointer;
+			&, 
+			&:visited, 
+			&:hover, 
+			&:active {
+				.color-fix(@menu-tree-text-color);
+				text-decoration: @menu-tree-text-decoration;
+			}
+			&:hover {
+				.color-fix(@menu-tree-text-color-hover);
+				text-decoration: @menu-tree-text-decoration-hover;
+			}
+		}
+		&.active {
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				.color-fix(@menu-tree-text-color-active);
+				font-style: @menu-tree-font-style-active;
+				font-weight: @menu-tree-font-weight-active;
+			}
+			> a:hover {
+				.color-fix(@menu-tree-text-color-hover);
+				text-decoration: @menu-tree-text-decoration-hover;
+			}
+		}
+		&.disabled {
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				.color-fix(@menu-tree-text-color-disabled);
+				color: @menu-tree-text-color-disabled;
+			}
+		}
+	}
+	/*
+	/*
+	li {
+		padding-left: 0px;
+		li {
+			padding-left: (2 * @x);
+		}
+	}
+	li {
+		padding-left: (2 * @x);
+		&.collapsed {
+			background-image: url(../img/menu-tree-collapsed.png);
+		}
+		&.expanded {
+			background-image: url(../img/menu-tree-expanded.png);
+		}
+		&.leaf {
+			background-image: url(../img/menu-tree-leaf.png);
+		}
+	}
+	li {
+		background-position: left top;
+		background-repeat: no-repeat;
+	}
+	*/
+	.preset-menu-tree;
+}
+
+/* Bar menu - ylämenu vaaka*/
+.menu-bar {
+	.float-fix;
+	.list-float;
+	font-family: @menu-bar-font-family;
+	font-size: @menu-bar-font-size;
+	font-weight: @menu-bar-font-weight;
+	line-height: @menu-bar-line-height;
+	margin-bottom: 0px;
+	padding: @menu-bar-padding;
+	position: relative;
+	a {
+		.no-focus;
+		//cursor: pointer;
+		display: block;
+		padding: @menu-bar-item-padding;
+		&, 
+		&:visited, 
+		&:hover, 
+		&:active {
+			//background-position: right top;
+			//background-repeat: no-repeat;
+			.bg-color-fix(@menu-bar-color);
+			.color-fix(@menu-bar-text-color);
+			text-decoration: none;
+		}
+	}
+	li {
+		.no-wrap;
+		position: static; // TODO: What does this do???
+		&:hover {
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				.bg-color-fix(@menu-bar-color-hover);
+				.color-fix(@menu-bar-text-color-hover);
+			}
+		}
+		&.active {
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				.bg-color-fix(@menu-bar-color-active);
+				.color-fix(@menu-bar-text-color-active);
+			}
+		}
+		&.disabled {
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				.bg-color-fix(@menu-bar-color-disabled) !important;
+				.color-fix(@menu-bar-text-color-disabled) !important;
+			}
+		}
+	}
+	&,
+	ul {
+		//background-color: @menu-bar-color;
+	}
+	ul {
+		position: absolute;
+		left: 0px;
+	}
+	/*
+	li {
+		&:hover {
+			background-color: @menu-bar-color-hover;
+		}
+		&:active,
+		&.active {
+			background-color: @menu-bar-color-active;
+		}
+		&.expanded {
+			& > a {
+				background-image: url(../img/menu-dropdown-down.png);
+				padding-right: (3 * @x);
+			}
+		}
+		a {
+			height: @menu-bar-line-height;
+			line-height: @menu-bar-line-height;
+			padding: (0.5 * @y) (1.5 * @x) (0.5 * @y) (1.5 * @x);
+			&,
+			&:visited,
+			&:hover,
+			&:active {
+				color: @menu-bar-text-color;
+				text-decoration: none;
+			}
+		}
+		ul {
+			top: (@menu-bar-line-height + @y);
+		}
+	}
+	*/
+	.preset-menu-bar;
+}
+
+/* Dropdown menu bar */
+.menu-bar-dropdown {
+	.menu-bar;
+	.menu-hide-sub-items;
+	li {
+		position: relative;
+	}
+	ul {
+		min-width: @menu-bar-dropdown-min-width;
+		position: absolute;
+		li {
+			float: none;
+		}
+		left: 0px;
+		top: 100%;
+		ul {
+			left: 100%;
+			top: 0px;
+		}
+	}
+	.preset-menu-bar-dropdown;
+}
+
+/* Column menu */
+.menu-col {
+	/*
+	.float-fix;
+	.list-linear;
+	margin-bottom: 0px;
+	li {
+		white-space: nowrap;
+		a {
+			background-position: right top;
+			background-repeat: no-repeat;
+			display: block;
+			padding: @menu-item-padding-col;
+			&:focus { 
+				outline: none; 
+			}
+		}
+	}
+	*/
+	.float-fix;
+	.list-linear;
+	font-family: @menu-col-font-family;
+	font-size: @menu-col-font-size;
+	font-weight: @menu-col-font-weight;
+	line-height: @menu-col-line-height;
+	margin-bottom: 0px;
+	padding: @menu-col-padding;
+	position: relative;
+	a {
+		.no-focus;
+		cursor: pointer;
+		display: block;
+		padding: @menu-col-item-padding;
+		&, 
+		&:visited, 
+		&:hover, 
+		&:active {
+			//background-position: right top;
+			//background-repeat: no-repeat;
+			.bg-color-fix(@menu-col-color);
+			.color-fix(@menu-col-text-color);
+			text-decoration: none;
+		}
+	}
+	li {
+		.no-wrap;
+		&:hover {
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				.bg-color-fix(@menu-col-color-hover);
+				.color-fix(@menu-col-text-color-hover);
+			}
+		}
+		&.active {
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				.bg-color-fix(@menu-col-color-active);
+				.color-fix(@menu-col-text-color-active);
+			}
+		}
+		&.disabled {
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				.bg-color-fix(@menu-col-color-disabled) !important;
+				.color-fix(@menu-col-text-color-disabled) !important;
+			}
+		}
+	}
+	&,
+	ul {
+		//background-color: @menu-col-color;
+	}
+	.preset-menu-col;
+}
+
+/* Dropdown column menu */
+.menu-col-dropdown {
+	.menu-col;
+	.menu-hide-sub-items;
+	li {
+		position: relative;
+		ul {
+			left: 100%;
+			min-width: @menu-col-dropdown-min-width;
+			position: absolute;
+			top: 0px;
+			li {
+				float: none;
+				ul {
+					left: 100%;
+					top: 0px;
+				}
+			}
+		}
+	}
+	.preset-menu-col-dropdown;
+}
+
+/* Minimized menu */
+.menu-minimized {
+	li {
+		display: none;
+		&.active {
+			display: block;
+		}
+	}
+	.preset-menu-minimized;
+}
+
+/* Menu add margins */
+.menu-add-margins(@menu-item-margin) {
+	li li {
+		margin-left: @menu-item-margin;
+		li {
+			margin-left: (2 * @menu-item-margin);
+			li {
+				margin-left: (3 * @menu-item-margin);
+				li {
+					margin-left: (4 * @menu-item-margin);
+					li {
+						margin-left: (5 * @menu-item-margin);
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Menu hide sub items */
+.menu-show-sub-items {
+	ul, 
+	ol {
+		display: block;
+	}
+}
+
+/* Menu show sub items */
+.menu-hide-sub-items {
+	ul, 
+	ol {
+		display: none;
+	}
+}
+
+/* Menu expand on hover */
+.menu-expand-on-hover {
+	.menu-hide-sub-items;
+	li:hover ul {
+		display: block;
+	}
+	li:hover ul ul {
+		display: none;
+	}
+	ul li:hover ul {
+		display: block;
+	}
+}

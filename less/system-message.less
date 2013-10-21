@@ -1,0 +1,126 @@
+/* System message styles (sub theme: keep the file) */
+
+
+// TODO: Lis‰‰ speech balloon -versio formien t‰ytt‰misen aikaista tarkistusta varten
+// TODO: T‰ll‰ hetkell‰ .system-message tyylit lis‰t‰‰n aina pariinkin kertaan paikoilleen
+
+/* System message */
+.system-message {
+	background-color: @system-message-color;
+	color: @system-message-text-color;
+	margin-bottom: @y;
+	padding: @system-message-padding;
+	.preset-system-message;
+	/*
+	&.information {
+		.system-message-information;
+	}
+	&.success {
+		.system-message-success;
+	}
+	&.notice {
+		.system-message-notice;
+	}
+	&.failure {
+		.system-message-failure;
+	}
+	*/
+}
+
+/* Information system message */
+.system-message-information {
+	.system-message;
+	background-color: @system-message-information-color;
+	color: @system-message-information-text-color;
+	.preset-system-message-information;
+}
+
+/* Success system message */
+.system-message-success {
+	.system-message;
+	background-color: @system-message-success-color;
+	color: @system-message-success-text-color;
+	.preset-system-message-success;
+}
+
+/* Notice system message */
+.system-message-notice {
+	.system-message;
+	background-color: @system-message-notice-color;
+	color: @system-message-notice-text-color;
+	.preset-system-message-notice;
+}
+
+/* Failure system message */
+.system-message-failure {
+	.system-message;
+	background-color: @system-message-failure-color;
+	color: @system-message-failure-text-color;
+	.preset-system-message-failure;
+}
+
+/* System message Drupal adapter */
+.messages {
+	.system-message;
+	&.status {
+		.system-message-success;
+	}
+	&.warning {
+		.system-message-notice;
+	}
+	&.error {
+		.system-message-failure;
+	}
+}
+.form-item {
+	div {
+		&.status, 
+		&.warning, 
+		&.error {
+			.system-message;
+			margin-top: @y;
+		}
+		&.status {
+			.system-message-success;
+		}
+		&.warning {
+			.system-message-notice;
+		}
+		&.error {
+			.system-message-notice;
+		}
+	}
+}
+
+// TODO
+/* System message balloon *
+.system-message-balloon {
+	margin-top: (1.5 * @y);
+	position: absolute;
+	&:after {
+		border-color: @system-message-color transparent;
+		border-style: solid;
+		border-width: 0px @x @y;
+		bottom: 100%;
+		content: "";
+		display: block; 
+		left: 50%;
+		margin-left: (-@x);
+		position: absolute;
+		width: 0px;
+	}
+	.speech-balloon();
+	.preset-system-message-balloon;
+}
+
+/* System message balloon Drupal adapter *
+.form-item {
+	div {
+		&.status, 
+		&.warning, 
+		&.error {
+			.system-message-balloon;
+		}
+	}
+}
+*/

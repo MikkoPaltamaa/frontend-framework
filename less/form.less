@@ -1,0 +1,84 @@
+/* Form styles (sub theme: keep the file) */
+
+
+/* Forms */
+.form {
+	margin-top: (2 * @y);
+	&:first-child {
+		margin-top: 0px;
+	}
+	.preset-form;
+}
+
+/* Form Drupal adapter */
+.webform-client-form, 
+.views-exposed-form, 
+form#user-login {
+	.form;
+}
+
+
+/* Form field */
+.form-field {
+	margin-bottom: @paragraph-margin;
+	.preset-form-field;
+}
+
+/* Form field Drupal adapter */
+.form-item {
+	.form-checkboxes, 
+	.form-radios {
+		.form-item {
+			margin-bottom: 0px;
+		}
+	}
+	.form-field;
+}
+
+
+/* Form label */
+.form-label {
+	display: block;
+	font-size: @form-label-font-size;
+	font-weight: @form-label-font-weight;
+	.preset-form-label;
+}
+
+/* Form label Drupal adapter */
+.form-item,
+.views-exposed-widget {
+	& > label:not(.option) {
+		.form-label;
+	}
+}
+
+
+/* Form hint */
+.form-hint {
+	color: @form-hint-text-color;
+	display: block;
+	font-size: @form-hint-font-size;
+	font-style: @form-hint-font-style;
+}
+
+/* Form hint Drupal adapter */
+.form-item {
+	.description {
+		.form-hint;
+	}
+}
+
+
+/* Form honeypot spam detection */
+.form-check, 
+.form-honeypot {
+	display: none;
+}
+
+
+// TODO: Valitse kumpaa merkint‰‰ k‰ytet‰‰n sivustoilla ja poista toinen t‰‰lt‰
+/* Form honeypot spam detection Drupal adapter */
+#webform-component-empty, 
+.homepage-textfield {
+	.form-honeypot;
+}

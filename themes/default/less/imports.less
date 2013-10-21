@@ -1,0 +1,103 @@
+/* LESS stylesheets are imported here so that they can use the same settings with each other. If you want to replace any of the files or add your own stylesheets, do it here. */
+
+/* Framework paths */
+@path-less-framework: '../../../less/';
+@path-img-framework: '../../../img/';
+@path-fonts-framework: '../../../fonts/';
+
+/* Default theme paths */
+@path-less-default: '../less/';
+@path-img-default: '../img/';
+@path-fonts-default: '../fonts/';
+
+/* Layouts */
+@layout-default: ~'(min-width: 980px)';
+@layout-narrow: ~'(min-width: 740px) and (max-width: 979px)';
+@layout-fluid: ~'(min-width: 0px) and (max-width: 739px)';
+
+/* Imported stylesheets */
+
+/* Sub theme: keep the files */
+@import '@{path-less-framework}mixins.less';
+@import '@{path-less-framework}tricks.less';
+//@import '@{path-less-framework}fixes.less';
+
+/* Sub theme: replace the files */
+@import '@{path-less-default}fonts-default.less';
+
+/* Sub theme: replace the files */
+@import '@{path-less-default}grid-default.less';
+@import '@{path-less-default}elements-default.less';
+@import '@{path-less-default}icons-default.less';
+
+/* Sub theme: keep the files */
+@import '@{path-less-framework}grid.less';
+@import '@{path-less-framework}elements.less';
+@import '@{path-less-framework}icons.less';
+
+/* Sub theme: replace the files */
+@import '@{path-less-default}@{path-less-default}accordion-default.less';
+@import '@{path-less-default}article-default.less';
+@import '@{path-less-default}attachments-default.less';
+@import '@{path-less-default}breadcrumbs-default.less';
+@import '@{path-less-default}button-default.less';
+@import '@{path-less-default}carousel-default.less';
+@import '@{path-less-default}form-default.less';
+@import '@{path-less-default}link-default.less';
+@import '@{path-less-default}list-default.less';
+@import '@{path-less-default}listing-default.less';
+@import '@{path-less-default}media-default.less';
+@import '@{path-less-default}menu-default.less';
+@import '@{path-less-default}page-parts-default.less';
+@import '@{path-less-default}pager-default.less';
+@import '@{path-less-default}panel-default.less';
+@import '@{path-less-default}popup-default.less';
+@import '@{path-less-default}search-default.less';
+@import '@{path-less-default}separator-default.less';
+@import '@{path-less-default}site-map-default.less';
+@import '@{path-less-default}speech-balloon-default.less';
+//@import '@{path-less-default}steps-default.less'; // TODO
+@import '@{path-less-default}system-message-default.less';
+@import '@{path-less-default}table-default.less';
+@import '@{path-less-default}tabs-default.less';
+@import '@{path-less-default}text-default.less';
+
+/* Sub theme: keep the files */
+@import '@{path-less-framework}accordion.less';
+@import '@{path-less-framework}article.less';
+@import '@{path-less-framework}attachments.less';
+@import '@{path-less-framework}breadcrumbs.less';
+@import '@{path-less-framework}button.less';
+@import '@{path-less-framework}carousel.less';
+@import '@{path-less-framework}form.less';
+@import '@{path-less-framework}link.less';
+@import '@{path-less-framework}list.less';
+@import '@{path-less-framework}listing.less';
+@import '@{path-less-framework}media.less';
+@import '@{path-less-framework}menu.less';
+@import '@{path-less-framework}page-parts.less';
+@import '@{path-less-framework}pager.less';
+@import '@{path-less-framework}panel.less';
+@import '@{path-less-framework}popup.less';
+@import '@{path-less-framework}search.less';
+@import '@{path-less-framework}separator.less';
+@import '@{path-less-framework}site-map.less';
+@import '@{path-less-framework}speech-balloon.less';
+//@import '@{path-less-framework}steps.less'; // TODO
+@import '@{path-less-framework}system-message.less';
+@import '@{path-less-framework}table.less';
+@import '@{path-less-framework}tabs.less';
+@import '@{path-less-framework}text.less';
+
+/* Sub theme: replace the files */
+@import '@{path-less-default}layout-default.less';
+@import '@{path-less-default}components-default.less';
+@import '@{path-less-default}pages-default.less';
+@import '@{path-less-default}popups-default.less';
+@import '@{path-less-default}languages-default.less';
+
+/* Sub theme: replace the files */
+@import '@{path-less-default}tools-default.less';
+
+/* Sub theme: keep the files */
+@import '@{path-less-framework}tools.less';

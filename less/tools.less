@@ -1,0 +1,247 @@
+/* Tool styles (keep the file) */
+
+
+
+/* Layout indicators */
+.layout-debug {
+	body:before {
+		background-color: #CCCCCC;
+		color: #000000;
+		position: fixed;
+		padding: 5px 10px;
+		bottom: 30px;
+		left: 30px;
+		z-index: 9999;
+	}
+}
+@media screen, handheld, projection, tv {
+	@media @layout-default {
+		.layout-debug {
+			body:before {
+				content: "Default layout";
+			}
+		}
+	}
+	@media @layout-narrow {
+		.layout-debug {
+			body:before {
+				content: "Narrow layout";
+			}
+		}
+	}
+	@media @layout-fluid {
+		.layout-debug {
+			body:before {
+				content: "Fluid layout";
+			}
+		}
+	}
+}
+@media print {
+	.layout-debug {
+		body:before {
+			content: "Print layout";
+		}
+	}
+}
+
+
+/* Grid helper tool */
+.layout-debug {
+
+	#page {
+		
+		/* Hover effect for the sections, zones, regions, blocks */
+		.section, 
+		.zone, 
+		.region, 
+		.block {
+			&:hover {
+				/*
+				-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+				-moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+				box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+				*/
+			}
+		}
+		
+		/* Grid background for the zones */
+		.zone {
+			&:hover {
+				background-color: transparent !important;
+				background-image: @grid-bg !important;
+				background-repeat: repeat !important;
+				background-position: @grid-offset-x @grid-offset-y !important;
+				background-attachment: scroll !important;
+				//background-position: center center !important;
+   				//background-attachment: fixed !important;
+			}
+			*:hover {
+				background-color: transparent !important;
+				background-image: none !important;
+			}
+		}
+		
+		/* Hover effect for the all elements */
+		*:hover {
+			-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+			-moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+			box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+		}
+		
+		/* Hover effect for the sections, zones, regions, blocks */
+		.section {
+			&:hover {
+				-webkit-box-shadow: 0px 0px 10px 0px rgba(255, 127, 0, 0.5);
+				-moz-box-shadow: 0px 0px 10px 0px rgba(255, 127, 0, 0.5);
+				box-shadow: 0px 0px 10px 0px rgba(255, 127, 0, 0.5);
+			}
+		}
+		.zone {
+			&:hover {
+				-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 255, 0, 0.5);
+				-moz-box-shadow: 0px 0px 10px 0px rgba(0, 255, 0, 0.5);
+				box-shadow: 0px 0px 10px 0px rgba(0, 255, 0, 0.5);
+			}
+		}
+		.region {
+			&:hover {
+				-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 255, 255, 0.5);
+				-moz-box-shadow: 0px 0px 10px 0px rgba(0, 255, 255, 0.5);
+				box-shadow: 0px 0px 10px 0px rgba(0, 255, 255, 0.5);
+			}
+		}
+		.block {
+			&:hover {
+				-webkit-box-shadow: 0px 0px 10px 0px rgba(255, 0, 255, 0.5);
+				-moz-box-shadow: 0px 0px 10px 0px rgba(255, 0, 255, 0.5);
+				box-shadow: 0px 0px 10px 0px rgba(255, 0, 255, 0.5);
+			}
+		}
+		/*
+		.section, 
+		.zone, 
+		.region, 
+		.block {
+			&:hover {
+				-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 255, 0, 0.5);
+				-moz-box-shadow: 0px 0px 10px 0px rgba(0, 255, 0, 0.5);
+				box-shadow: 0px 0px 10px 0px rgba(0, 255, 0, 0.5);
+			}
+		}
+		*/
+		
+		/* Make opaque elements 50% transparent */
+		audio, 
+		embed, 
+		// button, 
+		canvas, 
+		hr, 
+		iframe, 
+		img, 
+		// input, 
+		object, 
+		select, 
+		// textarea, 
+		video {
+			&:hover {
+				opacity: 0.5 !important;
+			}
+		}
+		
+		/* Apply grid background for block text elements */
+		caption, 
+		dd, 
+		dt, 
+		figcaption, 
+		h1, 
+		h2, 
+		h3, 
+		h4, 
+		h5, 
+		h6, 
+		li, 
+		p, 
+		pre {
+			&:hover {
+				// background-color: lightpink;
+				background-color: transparent !important;
+				background-image: @block-text-bg !important;
+				background-repeat: repeat !important;
+				background-position: left top !important;
+				background-attachment: scroll !important;
+			}
+		}
+		
+		/* Apply grid background for inline text elements */
+		a, 
+		abbr, 
+		b, 
+		bdi, 
+		bdo, 
+		cite, 
+		code, 
+		del, 
+		dfn, 
+		em, 
+		i, 
+		ins, 
+		kbd, 
+		label, 
+		mark, 
+		output, 
+		q, 
+		ruby, 
+		rt, 
+		rp, 
+		s, 
+		samp, 
+		small, 
+		strong, 
+		sub, 
+		sup, 
+		time, 
+		u, 
+		var {
+			&:hover {
+				// background-color: lightyellow;
+				background-color: transparent !important;
+				background-image: @inline-text-bg !important;
+				background-repeat: repeat !important;
+				background-position: left top !important;
+				background-attachment: scroll !important;
+			}
+		}
+		
+		/* Apply grid background for other text elements */
+		legend, 
+		summary, 
+		td, 
+		th {
+			&:hover {
+				// background-color: lightblue;
+				background-color: transparent !important;
+				background-image: @other-text-bg !important;
+				background-repeat: repeat !important;
+				background-position: left top !important;
+				background-attachment: scroll !important;
+			}
+		}
+		
+	}
+	
+}
+
+
+/* Outlines for the depracated elements */
+acronym,
+applet,
+big,
+center,
+dir,
+font,
+isindex,
+strike,
+tt {
+	// outline: 2px solid red !important; // Breaks IE7 & IE8 printing styles with Modernizr
+}

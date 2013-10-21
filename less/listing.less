@@ -1,0 +1,123 @@
+/* Listing styles (sub theme: keep the file) */
+
+
+/* Listing */
+.listing {
+	//.float-fix;
+}
+
+/* Listing Drupal adapter */
+.view {
+	.view-content, 
+	.view-attachment {
+		.listing;
+	}
+	.view-filters {
+		margin-bottom: @y;
+	}
+	.attachment-before {
+		margin-bottom: (2 * @y);
+	}
+	.attachment-after {
+		margin-top: (2 * @y);
+	}
+	.more-link {
+		margin-top: (2 * @y);
+	}
+}
+
+/* Full listing */
+.listing-full {
+	& > * {
+		.float-fix;
+		margin-bottom: @listing-full-margin;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+	.preset-listing-full;
+}
+
+/* Full listing Drupal adapter */
+.view-full {
+	.view-content, 
+	.view-attachment {
+		.listing-full;
+	}
+}
+	
+/* Teasers listing */
+.listing-teasers {
+	& > * {
+		.float-fix;
+		margin-bottom: @listing-teasers-margin;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+	.preset-listing-teasers;
+}
+
+/* Teasers listing Drupal adapter */
+.view-teasers {
+	.view-content, 
+	.view-attachment {
+		.listing-teasers;
+	}
+}
+
+/* Grid listing */
+.listing-grid {
+	& > * {
+		.float-fix;
+		margin-bottom: @listing-grid-margin;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+	.preset-listing-grid;
+}
+
+/* Grid listing Drupal adapter */
+.view-grid {
+	.view-content, 
+	.view-attachment {
+		.listing-grid;
+	}
+}
+
+/* Titles listing */
+.listing-titles {
+	ol, 
+	ul {
+		.list-linear;
+		li {
+			.float-fix;
+			margin-bottom: @listing-titles-margin;
+			&:last-child {
+				margin-bottom: 0px;
+			}
+		}
+	}
+	.preset-listing-titles;
+}
+
+/* Titles listing Drupal adapter */
+.view-titles {
+	.view-content, 
+	.view-attachment {
+		.listing-titles;
+	}
+}
+
+/* Listing item */
+.listing-item {
+	//.float-fix;
+	page-break-inside: avoid;
+	.preset-listing-item;
+}
+
+/* Listing item Drupal adapter */
+.views-row {
+	.listing-item;
+}

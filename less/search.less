@@ -1,0 +1,73 @@
+/* Search styles (sub theme: keep the file) */
+
+
+/* Search form */
+.search-form {
+	.preset-search-form;
+}
+	
+/* Search form Drupal adapter */
+#search-form {
+	#edit-basic {
+		margin-bottom: (2 * @y);
+		.form-item-keys {
+			display: inline;
+			label {
+				display: none;
+			}
+		}
+		#edit-keys {
+			width: (22 * @x);
+		}
+		#edit-submit {
+			margin-left: (0.4 * @x);
+		}
+	}
+	.criterion {
+		margin-bottom: @y;
+		label[for="edit-type"],
+		label[for="edit-language"] {
+			margin-bottom: @y;
+		}
+	}
+	.search-form;
+}
+
+
+/* Search results */
+.search-results {
+	.preset-search-results;
+}
+
+/* Search results Drupal adapter */
+.page-search {
+	.ds-search-extra {
+		font-style: italic;
+		margin-bottom: (3 * @y);
+	}
+	#block-system-main {
+		.view-content {
+			.search-results;
+			margin-bottom: (2 * @y);
+		}
+	}
+}
+
+
+/* Search result */
+.search-result {
+	.preset-search-results;
+}
+
+/* Search result Drupal adapter */
+.page-search {
+	#block-system-main {
+		.view-content {
+			.node, 
+			.taxonomy-term {
+				.search-result;
+			}
+		}
+	}
+}
+

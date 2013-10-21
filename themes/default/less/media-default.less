@@ -1,0 +1,57 @@
+/* Media styles (sub theme: replace the file) */
+
+
+/* Media settings */
+@med-margin-horizontal: @gutter-width;
+@med-margin-vertical: @gutter-height;
+
+
+/* Media wrapper preset */
+.preset-media-wrapper {}
+
+/* Media preset */
+.preset-media {}
+
+/* Image preset */
+.preset-image {}
+
+/* Adaptive image preset */
+.preset-image-adaptive {}
+
+/* Zoomable image preset */
+.preset-image-zoomable {
+	display: block;
+	position: relative;
+	&:before {
+		// TODO: Move the background image to the Rapala theme and the other sub themes
+		/*
+		background-image: url(../img/image-zoom.png);
+		background-position: center center;
+		background-repeat: no-repeat;
+		*/
+		.icon-font('zoom-in', @color-grayscale-4);
+		display: inline-block;
+		height: (2 * @y);
+		position: absolute;
+		right: @x;
+		bottom: @y;
+		width: (2 * @x);
+	}
+	@media print {
+		&:before {
+			display: none;
+		}
+	}
+}
+
+/* Video preset */
+.preset-video {}
+
+/* Video player preset */
+.preset-player-video {}
+
+/* Audio preset */
+.preset-audio {}
+
+/* Media caption preset */
+.preset-media-caption {}

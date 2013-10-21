@@ -1,0 +1,32 @@
+/* Icon styles (sub theme: keep the file) */
+
+/* Icon font */
+.icon-font(@type, @color: '', @size: '', @margin: '') {
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	font-weight: normal;
+	speak: none;
+	text-align: center;
+	text-decoration: none;
+	text-transform: none;
+	.icon-font-type(@type);
+	.icon-font-color(@color);
+	.icon-font-size(@size);
+	.icon-font-margin(@margin);
+	.preset-icon-font;
+}
+
+/* Icon font margin */
+.icon-font-margin(@margin) when not (@margin = '') {
+	margin: @margin;
+}
+
+/* Icon font color */
+.icon-font-color(@color) when (iscolor(@color)) {
+	color: @color;
+}
+
+/* Icon font size */
+.icon-font-size(@size) when (isnumber(@size)) {
+	font-size: @size;
+}

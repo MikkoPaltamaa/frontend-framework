@@ -1,0 +1,63 @@
+/* System message styles (sub theme: replace the file) */
+
+
+/* System message settings */
+@system-message-padding: @y @x;
+@system-message-color: @color-grayscale-2;
+@system-message-text-color: @color-grayscale-16;
+@system-message-information-color: #CCDDFF;
+@system-message-information-text-color: #003366;
+@system-message-success-color: #CCFFCC;
+@system-message-success-text-color: #006600;
+@system-message-notice-color: #FFFFCC;
+@system-message-notice-text-color: #666600;
+@system-message-failure-color: #FFCCCC;
+@system-message-failure-text-color: #660000;
+
+
+/* System message preset */
+.preset-system-message {
+	&:before {
+		display: inline-block;
+		float: left;
+		margin-right: @x;
+		margin-left: (-3 * @x);
+		min-width: (2 * @x);
+	}
+}
+
+/* Information system message preset */
+.preset-system-message-information {
+	padding-left: (4 * @x);
+	&:before {
+		.icon-font('info-sign');
+	}
+}
+
+/* Success system message preset */
+.preset-system-message-success {
+	padding-left: (4 * @x);
+	&:before {
+		.icon-font('ok-sign');
+	}
+}
+
+/* Notice system message preset */
+.preset-system-message-notice {
+	padding-left: (4 * @x);
+	&:before {
+		.icon-font('warning-sign');
+	}
+}
+
+/* Failure system message preset */
+.preset-system-message-failure {
+	padding-left: (4 * @x);
+	&:before {
+		.icon-font('remove-sign');
+	}
+}
+
+/* System message balloon preset */
+.preset-system-message-balloon {
+}

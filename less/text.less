@@ -1,0 +1,56 @@
+/* Text styles (sub theme: keep the file) */
+
+
+// TODO: Kirjoita tyylit uusiksi
+/* Heading */
+.heading {
+	font-size: @heading-font-size;
+	font-weight: @heading-font-weight;
+	margin-top: @heading-margin-top;
+	&:first-child {
+		margin-top: 0px;
+	}
+	.preset-heading;
+}
+
+/* Ingress */
+.ingress {
+	font-size: @ingress-font-size;
+	font-weight: @ingress-font-weight;
+	.preset-ingress;
+}
+
+/* Caption */
+.caption {
+	font-size: @caption-font-size;
+	font-weight: @caption-font-weight;
+	.preset-caption;
+}
+
+/* Dim */
+.dim {
+	color: rgb(red(@dim-text-color), green(@dim-text-color), blue(@dim-text-color));
+	color: @dim-text-color;
+	font-size: @dim-font-size;
+	a, 
+	a:visited, 
+	a:active {
+		color: rgb(red(@dim-text-color), green(@dim-text-color), blue(@dim-text-color));
+		color: @dim-text-color;
+		text-decoration: none;
+	}
+	a:hover {
+		color: rgb(red(@link-color-hover), green(@link-color-hover), blue(@link-color-hover));
+		color: @link-color-hover;
+		text-decoration: @link-text-decoration-hover;
+	}
+	.preset-dim;
+}
+
+/* Selection */
+.selection-color(@selection-color) {
+	::selection {
+		background-color: rgb(red(@selection-color), green(@selection-color), blue(@selection-color));
+		background-color: @selection-color;
+	}
+}

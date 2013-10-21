@@ -1,0 +1,1160 @@
+/* HTML5 element styles (sub theme: keep the file) */
+
+
+/* Global styles */
+@media all {
+
+	/* Fix the new HTML5 elements for Firefox 3 */
+	article, 
+	aside, 
+	details, 
+	figcaption, 
+	figure, 
+	footer, 
+	header, 
+	hgroup, 
+	menu, 
+	nav, 
+	section, 
+	summary {
+		display: block;
+	}
+	audio, 
+	canvas, 
+	video {
+		display: inline-block;
+	}
+
+	/* Text styles */
+	body {
+	}
+	abbr, 
+	dfn {
+		&[title] {
+			border-bottom: 1px dotted;
+			cursor: help;
+		}
+	}
+	address {
+		font-style: normal;
+	}
+	b, 
+	strong {
+		font-weight: 700;
+		b, 
+		strong {
+			font-weight: normal;
+		}
+	}
+	caption, 
+	figcaption {
+		font-style: italic;
+		text-align: left;
+	}
+	cite, 
+	dfn, 
+	var {
+		font-style: italic;
+	}
+	code, 
+	kbd, 
+	samp {
+	}
+	dt {
+		font-weight: bold;
+	}
+	em, 
+	i {
+		font-style: italic;
+		em, 
+		i {
+			font-style: normal;
+		}
+	}
+	output {
+		font-style: italic;
+	}
+	pre {
+	}
+	small {
+	}
+	sub, 
+	sup {
+	}
+	summary {
+		font-weight: bold;
+	}
+	tfoot {
+		td {
+			font-style: italic;
+		}
+	}
+	th, 
+	td {
+		vertical-align: top;
+	}
+	th {
+		font-weight: bold;
+		text-align: left;
+	}
+
+	/* Positioning, margins and paddings */
+	body {
+		padding: 0px;
+		margin: 0px;
+	}
+	blockquote, 
+	dd, 
+	details, 
+	dl, 
+	dt, 
+	fieldset, 
+	figure, 
+	form, 
+	h1, 
+	h2, 
+	h3, 
+	h4, 
+	h5, 
+	h6, 
+	hgroup, 
+	li, 
+	menu, 
+	nav, 
+	ol, 
+	p, 
+	pre, 
+	ul, 
+	summary, 
+	table {
+		&:last-child, 
+		&:empty {
+			margin-bottom: 0px;
+		}
+	}
+	blockquote, 
+	details, 
+	dd, 
+	dl, 
+	dt, 
+	fieldset, 
+	figure, 
+	form, 
+	h1, 
+	h2, 
+	h3, 
+	h4, 
+	h5, 
+	h6, 
+	hgroup, 
+	li, 
+	menu, 
+	nav, 
+	ol, 
+	p, 
+	pre, 
+	ul, 
+	summary, 
+	table {
+	}
+	blockquote, 
+	details, 
+	dl, 
+	fieldset, 
+	figure, 
+	form, 
+	menu, 
+	nav, 
+	ol, 
+	p, 
+	pre, 
+	ul, 
+	summary, 
+	table {
+		margin-top: 0px;
+	}
+	blockquote {
+		margin-right: 0px;
+	}
+	caption, 
+	figcaption {
+		margin: 0px;
+		padding-top: 0px;
+		padding-right: @x;
+		padding-left: @x;
+	}
+	dl {
+		padding: 0px;
+		dt {
+			margin: 0px;
+			padding: 0px;
+		}
+		dd {
+			margin: 0px;
+			padding: 0px;
+		}
+	}
+	figure {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+	h1, 
+	h2, 
+	h3, 
+	h4, 
+	h5, 
+	h6, 
+	hgroup {
+		&:first-child {
+			margin-top: 0px;
+		}
+	}
+	h1, 
+	h2, 
+	h3, 
+	h4, 
+	h5, 
+	h6, 
+	hgroup {
+		&:empty {
+			margin-top: 0px; // Must be in a separate block because empty selector causes IE8 to ignore the whole block
+		}
+	}
+	hgroup {
+		h1, 
+		h2, 
+		h3, 
+		h4, 
+		h5, 
+		h6 {
+			margin-top: 0px;
+			margin-bottom: 0px;
+		}
+	}
+	hr {
+		margin-bottom: 0px;
+	}
+	menu, 
+	ol, 
+	ul {
+		margin-left: 0px;
+		padding: 0px;
+		li {
+			padding: 0px;
+			margin: 0px;
+			menu, 
+			ol, 
+			ul {
+				margin-bottom: 0px;
+			}
+		}
+	}
+	menu {
+	}
+	menu[type='toolbar'] {
+		li {
+			margin-left: 0px;
+		}
+	}
+	menu[type='context'] {
+		li {
+			margin: 0px;
+		}
+	}
+
+	/* Links */
+	a {
+		img, 
+		input[type='image']	{
+			border: none;
+		}
+		> img, 
+		> input[type='image'] {
+			display: inline-block;
+		}
+	}
+	
+	/* Images */
+	img {
+		max-width: 100%;
+		-ms-interpolation-mode: bicubic;
+	}
+
+	// TODO
+	/* Tables */
+	table {
+		margin-top: -1px;
+		top: 1px;
+		position: relative;
+		th, 
+		td {
+			padding-top: (@y / 2 - @table-border-width);
+			padding-right: @x;
+			padding-bottom: (@y / 2);
+			padding-left: (@x - @table-border-width);
+		}
+		tfoot {
+			th, 
+			td {
+				padding-top: (@y / 2 - @table-footer-border-width);
+				padding-right: @x;
+				padding-bottom: (@y / 2);
+				padding-left: (@x - @table-footer-border-width);
+			}
+		}
+		thead {
+			th, 
+			td {
+				padding-top: (@y / 2 - @table-header-border-width);
+				padding-right: @x;
+				padding-bottom: (@y / 2);
+				padding-left: (@x - @table-header-border-width);
+			}
+		}
+	}
+	table {
+		background-color: @table-color;
+		border-collapse: collapse;
+		color: @table-text-color;
+		width: 100%;
+		caption {
+			caption-side: top;
+		}
+		td, 
+		th {
+			border: @table-border-width solid @table-border-color;
+		}
+		tfoot {
+			td, 
+			th {
+				background-color: @table-footer-color;
+				border: @table-footer-border-width solid @table-footer-border-color;
+				color: @table-footer-text-color;
+			}
+		}
+		thead {
+			td, 
+			th {
+				background-color: @table-header-color;
+				border: @table-header-border-width solid @table-header-border-color;
+				color: @table-header-text-color;
+			}
+		}
+	}
+
+	/* Embedding content */
+	audio, 
+	canvas, 
+	embed, 
+	iframe, 
+	img, 
+	object, 
+	video {
+		vertical-align: middle;
+	}
+	audio {
+		height: (4 * @y);
+		width: (20 * @x);
+	}
+	iframe {
+		border: none;
+	}
+
+	// TODO
+	/* Forms */
+	form {
+		margin: 0px 0px @paragraph-margin 0px;
+	}
+	fieldset {
+		line-height: @body-line-height;
+		position: relative;
+		top: @fieldset-border-width;
+		margin: (-@fieldset-border-width) 0px @paragraph-margin 0px;
+		border: @fieldset-border-width solid @fieldset-border-color;
+		padding-top: (2 * @y);
+		padding-right: (2 * @x - @fieldset-border-width);
+		padding-bottom: (2 * @y);
+		padding-left: (2 * @x - @fieldset-border-width);
+	}
+	legend {
+		display: block;
+		height: @body-line-height;
+		line-height: @body-line-height;
+		position: relative;
+		top: 0px;
+		left: 0px;
+		font-weight: bold;
+	}
+	button {
+		* {
+			vertical-align: middle;
+		}
+	}
+	button, 
+	input, 
+	select, 
+	textarea {
+		/*-webkit-box-sizing: content-box;
+		-moz-box-sizing: content-box;
+		box-sizing: content-box;*/
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	input[type='text'], 
+	input[type='password'], 
+	input[type='search'], 
+	input[type='tel'], 
+	input[type='url'], 
+	input[type='email'], 
+	input[type='datetime'], 
+	input[type='date'], 
+	input[type='month'], 
+	input[type='week'], 
+	input[type='time'], 
+	input[type='datetime-local'], 
+	input[type='number'], 
+	input[type='range'], 
+	input[type='color'] {
+		background-color: @text-input-color;
+		border-color: @text-input-border-color;
+		border-style: @text-input-border-style;
+		border-width: @text-input-border-width;
+		color: @text-input-text-color;
+		font-family: @text-input-font-family;
+		font-size: @text-input-font-size;
+		font-weight: @text-input-font-weight;
+		height: @text-input-height;
+		line-height: @text-input-line-height;
+		margin: @text-input-line-fill 0px;
+		padding: ((@text-input-height - @text-input-line-height) / 2 - @text-input-border-width) (0.3 * @x);
+		&[required] {
+			background-color: @text-input-color-required;
+			border-color: @text-input-border-color-required;
+			color: @text-input-text-color-required;
+		}
+		&[disabled] {
+			background-color: @text-input-color-disabled;
+			border-color: @text-input-border-color-disabled;
+			color: @text-input-text-color-disabled;
+		}
+	}
+	input[type='checkbox'], 
+	input[type='radio'] {
+		margin: 0px;
+		padding: 0px;
+		position: relative;
+		top: -1px;
+		width: (2 * @x);
+	}
+	input[type='button'], 
+	input[type='submit'], 
+	input[type='reset'], 
+	button {
+		background-color: @button-color;
+		border-color: @button-border-color;
+		border-style: @button-border-style;
+		border-width: @button-border-width;
+		color: @button-text-color;
+		cursor: pointer;
+		display: inline-block;
+		font-family: @button-font-family;
+		font-weight: @button-font-weight;
+		font-size: @button-font-size;
+		height: @button-height;
+		line-height: @button-line-height;
+		margin: @button-line-fill 0px;
+		outline: none;
+		padding: ((@button-height - @button-line-height) / 2 - @button-border-width) (@button-padding-horizontal - @button-border-width);
+		position: relative;
+		vertical-align: middle;
+		white-space: nowrap;
+		&:hover {
+			background-color: @button-color-hover;
+			border-color: @button-border-color-hover;
+			color: @button-text-color-hover;
+		}
+		&:active {
+			background-color: @button-color-active;
+			border-color: @button-border-color-active;
+			border-style: @button-border-style-active;
+			color: @button-text-color-active;
+		}
+		&[disabled] {
+			background-color: @button-color-disabled !important;
+			border-color: @button-border-color-disabled !important;
+			border-style: @button-border-style !important;
+			color: @button-text-color-disabled !important;
+		}
+	}
+	input[type='submit'] {
+		background-color: @button-color-default;
+		border-color: @button-border-color-default;
+		color: @button-text-color-default;
+	}
+	/* Input type file seems to have a fixed height in Firefox */
+	input[type='file'] {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		color: @text-input-text-color;
+		height: 26px;
+		position: relative;
+		margin: 2px 0px;
+		&[required] {
+			color: @text-input-text-color-required;
+		}
+		&[disabled] {
+			color: @text-input-text-color-disabled;
+		}
+	}
+	select {
+		background-color: @select-color;
+		border-color: @select-border-color;
+		border-style: @select-border-style;
+		border-width: @select-border-width;
+		color: @select-text-color;
+		font-family: @select-font-family;
+		font-size: @select-font-size;
+		font-weight: @select-font-weight;
+		height: @select-height;
+		line-height: @select-line-height;
+		margin: @select-line-fill 0px;
+		padding: 0px;
+		&[required] {
+			background-color: @select-color-required;
+			border-color: @select-border-color-required;
+			color: @select-text-color-required;
+		}
+		&[disabled] {
+			background-color: @select-color-disabled;
+			border-color: @select-border-color-disabled;
+			color: @select-text-color-disabled;
+		}
+		option {
+			padding: 0px (0.3 * @x);
+		}
+	}
+	textarea {
+		background-color: @text-area-color;
+		border-color: @text-area-border-color;
+		border-style: @text-area-border-style;
+		border-width: @text-area-border-width;
+		color: @text-area-text-color;
+		font-family: @text-area-font-family;
+		font-size: @text-area-font-size;
+		font-weight: @text-area-font-weight;
+		height: @text-area-height;
+		line-height: @text-area-line-height;
+		margin: @text-area-line-fill 0px;
+		padding: 0px (0.3 * @x);
+		&[required] {
+			background-color: @text-area-color-required;
+			border-color: @text-area-border-color-required;
+			color: @text-area-text-color-required;
+		}
+		&[disabled] {
+			background-color: @text-area-color-disabled;
+			border-color: @text-area-border-color-disabled;
+			color: @text-area-text-color-disabled;
+		}
+	}
+	/* IE7 fix: Remove extra paddings (affects IE7 and below) */
+	*+html {
+		input[type='text'], 
+		input[type='password'], 
+		input[type='search'], 
+		input[type='tel'], 
+		input[type='url'], 
+		input[type='email'], 
+		input[type='datetime'], 
+		input[type='date'], 
+		input[type='month'], 
+		input[type='week'], 
+		input[type='time'], 
+		input[type='datetime-local'], 
+		input[type='number'], 
+		input[type='range'], 
+		input[type='color'] {
+			height: 22px !important;
+			padding: 0px (0.3 * @x) !important;
+		}
+		input[type='file'] {
+			height: 24px !important;
+		}
+		input[type='button'], 
+		input[type='submit'], 
+		input[type='reset'], 
+		button {
+			height: @button-height !important;
+			width: auto;
+			overflow: visible;
+		}
+		/* Select seems to have a fixed height in IE7 */
+		select {
+			height: 23px;
+			margin: 3px 0px 4px 0px;
+		}
+		legend {
+			padding-bottom: @paragraph-margin;
+		}
+	}
+	/* IE8 would need "legend {padding-bottom: 8px}", but we can't target IE8 here without breaking IE9. */
+
+	/* Horizontal rule */
+	hr {
+		background-color: @hr-color;
+		border: none;
+		color: @hr-color;
+		top: @hr-height;
+		position: relative;
+		height: @hr-height;
+		margin: (-@hr-height) 0px @paragraph-margin 0px;
+		outline: none;
+		padding: 0px;
+	}
+	*+html hr { /* IE7 fix */
+		margin-top: -6px;
+		position: relative;
+		top: -1px;
+	}
+
+}
+
+
+/* Screen styles */
+@media screen, handheld, projection, tv {
+
+	/* Text styles */
+	body {
+		color: @body-text-color;
+		font-family: @body-font-family;
+		font-weight: @body-font-weight;
+		font-size: @body-font-size;
+		line-height: @body-line-height;
+	}
+	a {
+		color: @link-color;
+		&, 
+		&:visited, 
+		&:active {
+			text-decoration: @link-text-decoration;
+		}
+		&:visited {
+			color: @link-color-visited;
+		}
+		&:hover {
+			color: @link-color-hover;
+			text-decoration: @link-text-decoration-hover;
+		}
+		&:active {
+			color: @link-color-active;
+		}
+	}
+	h1 {
+		a,
+		a:visited {
+			color: @heading-1-text-color;
+		}
+	}
+	h2 {
+		a,
+		a:visited {
+			color: @heading-2-text-color;
+		}
+	}
+	h3 {
+		a,
+		a:visited {
+			color: @heading-3-text-color;
+		}
+	}
+	h4 {
+		a,
+		a:visited {
+			color: @heading-4-text-color;
+		}
+	}
+	h5 {
+		a,
+		a:visited {
+			color: @heading-5-text-color;
+		}
+	}
+	h6 {
+		a,
+		a:visited {
+			color: @heading-6-text-color;
+		}
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		a,
+		a:visited {
+			text-decoration: none;
+		}
+		a:active {
+			color: @link-color-active;
+		}
+		a:hover{
+			color: @link-color-hover;
+		}
+	}
+	code, 
+	kbd, 
+	samp {
+		color: @monospace-text-color;
+		font-family: @monospace-font-family;
+		font-weight: @monospace-font-weight;
+		font-size: @monospace-font-size;
+		line-height: (0.8 * @body-line-height);
+	}
+	h1 {
+		color: @heading-1-text-color;
+		font-family: @heading-1-font-family;
+		font-weight: @heading-1-font-weight;
+		font-size: @heading-1-font-size;
+		letter-spacing: @heading-1-letter-spacing;
+		line-height: @heading-1-line-height;
+		text-transform: @heading-1-text-transform;
+	}
+	h2 {
+		color: @heading-2-text-color;
+		font-family: @heading-2-font-family;
+		font-weight: @heading-2-font-weight;
+		font-size: @heading-2-font-size;
+		letter-spacing: @heading-2-letter-spacing;
+		line-height: @heading-2-line-height;
+		text-transform: @heading-2-text-transform;
+	}
+	h3 {
+		color: @heading-3-text-color;
+		font-family: @heading-3-font-family;
+		font-weight: @heading-3-font-weight;
+		font-size: @heading-3-font-size;
+		letter-spacing: @heading-3-letter-spacing;
+		line-height: @heading-3-line-height;
+		text-transform: @heading-3-text-transform;
+	}
+	h4 {
+		color: @heading-4-text-color;
+		font-family: @heading-4-font-family;
+		font-weight: @heading-4-font-weight;
+		font-size: @heading-4-font-size;
+		letter-spacing: @heading-4-letter-spacing;
+		line-height: @heading-4-line-height;
+		text-transform: @heading-4-text-transform;
+	}
+	h5 {
+		color: @heading-5-text-color;
+		font-family: @heading-5-font-family;
+		font-weight: @heading-5-font-weight;
+		font-size: @heading-5-font-size;
+		letter-spacing: @heading-5-letter-spacing;
+		line-height: @heading-5-line-height;
+		text-transform: @heading-5-text-transform;
+	}
+	h6 {
+		color: @heading-6-text-color;
+		font-family: @heading-6-font-family;
+		font-weight: @heading-6-font-weight;
+		font-size: @heading-6-font-size;
+		letter-spacing: @heading-6-letter-spacing;
+		line-height: @heading-6-line-height;
+		text-transform: @heading-6-text-transform;
+	}
+	pre {
+		color: @monospace-text-color;
+		font-family: @monospace-font-family;
+		font-weight: @monospace-font-weight;
+		font-size: @monospace-font-size;
+		line-height: @monospace-line-height;
+	}
+	ruby {
+		line-height: (2 * @body-line-height);
+		rp, 
+		rt {
+			line-height: (@body-line-height / 2);
+		}
+	}
+	small {
+		line-height: (0.8 * @body-line-height);
+	}
+	sub, 
+	sup {
+		line-height: (0.3 * @body-line-height);
+	}
+	th, 
+	td {
+		line-height: @body-line-height;
+	}
+
+	/* Positioning, margins and paddings */
+	blockquote, 
+	dd, 
+	details, 
+	dl, 
+	dt, 
+	fieldset, 
+	figure, 
+	form, 
+	menu, 
+	nav, 
+	ol, 
+	p, 
+	pre, 
+	ul, 
+	summary, 
+	table {
+		margin-bottom: @paragraph-margin;
+	}
+	blockquote {
+		margin-left: @block-indent;
+	}
+	caption, 
+	figcaption {
+		padding-bottom: @paragraph-margin;
+	}
+	dd {
+		margin-left: @block-indent;
+	}
+	h1 {
+		margin-bottom: @heading-1-margin-bottom;
+		margin-top: @heading-1-margin-top;
+	}
+	h2 {
+		margin-bottom: @heading-2-margin-bottom;
+		margin-top: @heading-2-margin-top;
+	}
+	h3 {
+		margin-bottom: @heading-3-margin-bottom;
+		margin-top: @heading-3-margin-top;
+	}
+	h4 {
+		margin-bottom: @heading-4-margin-bottom;
+		margin-top: @heading-4-margin-top;
+	}
+	h5 {
+		margin-bottom: @heading-5-margin-bottom;
+		margin-top: @heading-5-margin-top;
+	}
+	h6 {
+		margin-bottom: @heading-6-margin-bottom;
+		margin-top: @heading-6-margin-top;
+	}
+	hgroup {
+		margin-bottom: @heading-1-margin-bottom;
+		margin-top: @heading-1-margin-top;
+	}
+	menu, 
+	ol, 
+	ul {
+		li {
+			margin-left: @block-indent;
+		}
+	}
+	ol {
+		li {
+			margin-left: (@block-indent + @x);
+		}
+	}
+	
+}
+
+
+/* Print styles */
+@media print {
+	
+	/* Paging control */
+	caption, 
+	figcaption {
+		page-break-before: avoid;
+	}
+	caption, 
+	dt
+	h1, 
+	h2, 
+	h3, 
+	h4, 
+	h5, 
+	h6, 
+	legend, 
+	label, 
+	summary	{
+		page-break-after: avoid;
+	}
+	audio, 
+	button, 
+	canvas, 
+	caption, 
+	dt, 
+	figcaption, 
+	figure, 
+	h1, 
+	h2, 
+	h3, 
+	h4, 
+	h5, 
+	h6, 
+	hgroup, 
+	img, 
+	input, 
+	legend, 
+	li, 
+	label, 
+	select, 
+	sub, 
+	summary, 
+	sup, 
+	th, 
+	textarea, 
+	td, 
+	video {
+		page-break-inside: avoid;
+	}
+
+	/* Text styles */
+	body {
+		color: @print-body-text-color !important;
+		font-family: @print-body-font-family !important;
+		font-weight: @print-body-font-weight !important;
+		font-size: @print-body-font-size !important;
+		line-height: @print-body-line-height !important;
+	}
+	a {
+		color: @print-link-color !important;
+		&, 
+		&:visited, 
+		&:active {
+			text-decoration: @print-link-text-decoration !important;
+		}
+		&:visited {
+			color: @print-link-color-visited !important;
+		}
+		&:hover {
+			color: @print-link-color-hover !important;
+			text-decoration: @print-link-text-decoration-hover !important;
+		}
+		&:active {
+			color: @print-link-color-active !important;
+		}
+	}
+	h1 {
+		a,
+		a:visited {
+			color: @print-heading-1-text-color;
+		}
+	}
+	h2 {
+		a,
+		a:visited {
+			color: @print-heading-2-text-color;
+		}
+	}
+	h3 {
+		a,
+		a:visited {
+			color: @print-heading-3-text-color;
+		}
+	}
+	h4 {
+		a,
+		a:visited {
+			color: @print-heading-4-text-color;
+		}
+	}
+	h5 {
+		a,
+		a:visited {
+			color: @print-heading-5-text-color;
+		}
+	}
+	h6 {
+		a,
+		a:visited {
+			color: @print-heading-6-text-color;
+		}
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		a,
+		a:visited {
+			text-decoration: none;
+		}
+		a:active {
+			color: @print-link-color-active;
+		}
+		a:hover{
+			color: @print-link-color-hover;
+		}
+	}
+	code, 
+	kbd, 
+	samp {
+		color: @print-monospace-text-color !important;
+		font-family: @print-monospace-font-family !important;
+		font-weight: @print-monospace-font-weight !important;
+		font-size: @print-monospace-font-size !important;
+		line-height: (0.8 * @print-body-line-height) !important;
+	}
+	h1 {
+		color: @print-heading-1-text-color !important;
+		font-family: @print-heading-1-font-family !important;
+		font-weight: @print-heading-1-font-weight !important;
+		font-size: @print-heading-1-font-size !important;
+		letter-spacing: @print-heading-1-letter-spacing !important;
+		line-height: @print-heading-1-line-height !important;
+		text-transform: @print-heading-1-text-transform !important;
+	}
+	h2 {
+		color: @print-heading-2-text-color !important;
+		font-family: @print-heading-2-font-family !important;
+		font-weight: @print-heading-2-font-weight !important;
+		font-size: @print-heading-2-font-size !important;
+		letter-spacing: @print-heading-2-letter-spacing !important;
+		line-height: @print-heading-2-line-height !important;
+		text-transform: @print-heading-2-text-transform !important;
+	}
+	h3 {
+		color: @print-heading-3-text-color !important;
+		font-family: @print-heading-3-font-family !important;
+		font-weight: @print-heading-3-font-weight !important;
+		font-size: @print-heading-3-font-size !important;
+		letter-spacing: @print-heading-3-letter-spacing !important;
+		line-height: @print-heading-3-line-height !important;
+		text-transform: @print-heading-3-text-transform !important;
+	}
+	h4 {
+		color: @print-heading-4-text-color !important;
+		font-family: @print-heading-4-font-family !important;
+		font-weight: @print-heading-4-font-weight !important;
+		font-size: @print-heading-4-font-size !important;
+		letter-spacing: @print-heading-4-letter-spacing !important;
+		line-height: @print-heading-4-line-height !important;
+		text-transform: @print-heading-4-text-transform !important;
+	}
+	h5 {
+		color: @print-heading-5-text-color !important;
+		font-family: @print-heading-5-font-family !important;
+		font-weight: @print-heading-5-font-weight !important;
+		font-size: @print-heading-5-font-size !important;
+		letter-spacing: @print-heading-5-letter-spacing !important;
+		line-height: @print-heading-5-line-height !important;
+		text-transform: @print-heading-5-text-transform !important;
+	}
+	h6 {
+		color: @print-heading-6-text-color !important;
+		font-family: @print-heading-6-font-family !important;
+		font-weight: @print-heading-6-font-weight !important;
+		font-size: @print-heading-6-font-size !important;
+		letter-spacing: @print-heading-6-letter-spacing !important;
+		line-height: @print-heading-6-line-height !important;
+		text-transform: @print-heading-6-text-transform !important;
+	}
+	pre {
+		color: @print-monospace-text-color !important;
+		font-family: @print-monospace-font-family !important;
+		font-weight: @print-monospace-font-weight !important;
+		font-size: @print-monospace-font-size !important;
+		line-height: @print-monospace-line-height !important;
+	}
+	ruby {
+		line-height: (2 * @print-body-line-height) !important;
+		rp, 
+		rt {
+			line-height: (@print-body-line-height / 2);
+		}
+	}
+	small {
+		line-height: (0.8 * @print-body-line-height) !important;
+	}
+	sub, 
+	sup {
+		line-height: (0.3 * @print-body-line-height) !important;
+	}
+	th, 
+	td {
+		line-height: @print-body-line-height !important;
+	}
+
+	/* Positioning, margins and paddings */
+	blockquote, 
+	dd, 
+	details, 
+	dl, 
+	dt, 
+	fieldset, 
+	figure, 
+	form,  
+	menu, 
+	nav, 
+	ol, 
+	p, 
+	pre, 
+	ul, 
+	summary, 
+	table {
+		margin-bottom: @print-paragraph-margin;
+	}
+	blockquote {
+		margin-left: @print-block-indent;
+	}
+	caption, 
+	figcaption {
+		padding-bottom: @print-paragraph-margin;
+	}
+	dd {
+		margin-left: @print-block-indent;
+	}
+	h1 {
+		margin-bottom: @print-heading-1-margin-bottom;
+		margin-top: @print-heading-1-margin-top;
+	}
+	h2 {
+		margin-bottom: @print-heading-2-margin-bottom;
+		margin-top: @print-heading-2-margin-top;
+	}
+	h3 {
+		margin-bottom: @print-heading-3-margin-bottom;
+		margin-top: @print-heading-3-margin-top;
+	}
+	h4 {
+		margin-bottom: @print-heading-4-margin-bottom;
+		margin-top: @print-heading-4-margin-top;
+	}
+	h5 {
+		margin-bottom: @print-heading-5-margin-bottom;
+		margin-top: @print-heading-5-margin-top;
+	}
+	h6 {
+		margin-bottom: @print-heading-6-margin-bottom;
+		margin-top: @print-heading-6-margin-top;
+	}
+	hgroup {
+		margin-bottom: @print-heading-1-margin-bottom;
+		margin-top: @print-heading-1-margin-top;
+	}
+	menu, 
+	ol, 
+	ul {
+		li {
+			margin-left: @print-block-indent;
+		}
+	}
+	ol {
+		li {
+			margin-left: (@print-block-indent + @x);
+		}
+	}
+
+}

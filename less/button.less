@@ -1,0 +1,68 @@
+/* Button styles (sub theme: keep the file) */
+
+
+// TODO: Kirjoita tyylit uusiksi
+/* Button */
+.button {
+	background-color: @button-color;
+	border-color: @button-border-color;
+	border-style: @button-border-style;
+	border-width: @button-border-width;
+	color: @button-text-color;
+	cursor: pointer;
+	display: inline-block;
+	font-family: @button-font-family;
+	font-weight: @button-font-weight;
+	font-size: @button-font-size;
+	height: @button-height;
+	line-height: @button-height;
+	margin: @button-line-fill 0px;
+	outline: none;
+	padding: ((@button-height - @button-line-height) / 2 - @button-border-width) (@button-padding-horizontal - @button-border-width);
+	position: relative;
+	vertical-align: middle;
+	white-space: nowrap;
+	&:hover {
+		background-color: @button-color-hover;
+		border-color: @button-border-color-hover;
+		color: @button-text-color-hover;
+	}
+	&:active {
+		background-color: @button-color-active;
+		border-color: @button-border-color-active;
+		border-style: @button-border-style-active;
+		color: @button-text-color-active;
+	}
+	&[disabled] {
+		background-color: @button-color-disabled !important;
+		border-color: @button-border-color-disabled !important;
+		border-style: @button-border-style !important;
+		color: @button-text-color-disabled !important;
+	}
+	&,
+	&:visited,
+	&:hover,
+	&:active,
+	&.active {
+		text-decoration: none;
+	}
+	* {
+		vertical-align: middle;
+	}
+	.preset-button;
+}
+
+.button-icon {
+	.button;
+	.text-hide;
+	background-position: center center;
+	background-repeat: no-repeat;
+	.preset-button-icon;
+}
+.button-icon-text {
+	.button;
+	background-position: left top;
+	background-repeat: no-repeat;
+	padding-left: (3 * @x);
+	.preset-button-icon-text;
+}

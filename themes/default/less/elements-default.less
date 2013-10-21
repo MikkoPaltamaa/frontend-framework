@@ -1,0 +1,346 @@
+/* HTML5 element styles (sub theme: replace the file) */
+
+
+/* General settings */
+
+/* Grayscale colors (don't change) */
+@color-grayscale-1: #FFFFFF;
+@color-grayscale-2: #EEEEEE;
+@color-grayscale-3: #DDDDDD;
+@color-grayscale-4: #CCCCCC;
+@color-grayscale-5: #BBBBBB;
+@color-grayscale-6: #AAAAAA;
+@color-grayscale-7: #999999;
+@color-grayscale-8: #888888;
+@color-grayscale-9: #777777;
+@color-grayscale-10: #666666;
+@color-grayscale-11: #555555;
+@color-grayscale-12: #444444;
+@color-grayscale-13: #333333;
+@color-grayscale-14: #222222;
+@color-grayscale-15: #111111;
+@color-grayscale-16: #000000;
+
+/* Colors */
+@color-1: #FFFFFF; // Background
+@color-2: #000000; // Text
+@color-3: #CCCCCC; // ?
+@color-4: #CCCCCC; // ?
+@color-5: #CCCCCC; // ?
+@color-6: #CCCCCC; // ?
+@color-7: #CCCCCC; // ?
+@color-8: #CCCCCC; // ?
+
+/* Fonts */
+@font-sans-serif-1: 'Arial', 'Helvetica', 'FreeSans', sans-serif;
+@font-sans-serif-2: 'Verdana', 'Geneva', 'FreeSans', sans-serif;
+@font-serif-1: 'Georgia', 'Times New Roman', 'Times', serif;
+@font-serif-2: 'Times New Roman', 'Times', serif;
+@font-monospace-1: 'Courier New', 'Courier', 'FreeMono', monospace;
+
+
+/* Screen text settings */
+
+/* Margin and indent */
+@paragraph-margin: @y;
+@block-indent: (3 * @x);
+
+/* Body text */
+@body-font-family: @font-sans-serif-1;
+@body-font-weight: normal;
+@body-font-size: (1.4 * @y);
+@body-line-height: (2 * @y);
+@body-text-color: @color-grayscale-16;
+
+/* Link */
+@link-color: #0066FF;
+@link-color-visited: #990099;
+@link-color-active: #3399FF;
+@link-color-hover: #3399FF;
+@link-text-decoration: none;
+@link-text-decoration-hover: underline;
+
+/* Heading 1 */
+@heading-1-font-family: @body-font-family;
+@heading-1-font-weight: bold;
+@heading-1-font-size: (3.0 * @y);
+@heading-1-line-height: (4 * @y);
+@heading-1-text-color: @color-grayscale-16;
+@heading-1-margin-top: (3 * @y);
+@heading-1-margin-bottom: (2 * @y);
+@heading-1-text-transform: none;
+@heading-1-letter-spacing: normal;
+
+/* Heading 2 */
+@heading-2-font-family: @heading-1-font-family;
+@heading-2-font-weight: @heading-1-font-weight;
+@heading-2-font-size: (2.6 * @y);
+@heading-2-line-height: (3 * @y);
+@heading-2-text-color: @heading-1-text-color;
+@heading-2-margin-top: @heading-1-margin-top;
+@heading-2-margin-bottom: @heading-1-margin-bottom;
+@heading-2-text-transform: @heading-1-text-transform;
+@heading-2-letter-spacing: @heading-1-letter-spacing;
+
+/* Heading 3 */
+@heading-3-font-family: @heading-2-font-family;
+@heading-3-font-weight: @heading-2-font-weight;
+@heading-3-font-size: (2.2 * @y);
+@heading-3-line-height: @heading-2-line-height;
+@heading-3-text-color: @heading-2-text-color;
+@heading-3-margin-top: @heading-2-margin-top;
+@heading-3-margin-bottom: @heading-2-margin-bottom;
+@heading-3-text-transform: @heading-2-text-transform;
+@heading-3-letter-spacing: @heading-2-letter-spacing;
+
+/* Heading 4 */
+@heading-4-font-family: @heading-3-font-family;
+@heading-4-font-weight: @heading-3-font-weight;
+@heading-4-font-size: (1.8 * @y);
+@heading-4-line-height: @heading-3-line-height;
+@heading-4-text-color: @heading-3-text-color;
+@heading-4-margin-top: @heading-3-margin-top;
+@heading-4-margin-bottom: @heading-3-margin-bottom;
+@heading-4-text-transform: @heading-3-text-transform;
+@heading-4-letter-spacing: @heading-3-letter-spacing;
+
+/* Heading 5 */
+@heading-5-font-family: @heading-4-font-family;
+@heading-5-font-weight: @heading-4-font-weight;
+@heading-5-font-size: (1.6 * @y);
+@heading-5-line-height: @heading-4-line-height;
+@heading-5-text-color: @heading-4-text-color;
+@heading-5-margin-top: @heading-4-margin-top;
+@heading-5-margin-bottom: @heading-4-margin-bottom;
+@heading-5-text-transform: @heading-4-text-transform;
+@heading-5-letter-spacing: @heading-4-letter-spacing;
+
+/* Heading 6 */
+@heading-6-font-family: @heading-5-font-family;
+@heading-6-font-weight: @heading-5-font-weight;
+@heading-6-font-size: (1.4 * @y);
+@heading-6-line-height: @heading-5-line-height;
+@heading-6-text-color: @heading-5-text-color;
+@heading-6-margin-top: @heading-5-margin-top;
+@heading-6-margin-bottom: @heading-5-margin-bottom;
+@heading-6-text-transform: @heading-5-text-transform;
+@heading-6-letter-spacing: @heading-5-letter-spacing;
+
+/* Monospace text */
+@monospace-font-family: @font-monospace-1;
+@monospace-font-size: @body-font-size;
+@monospace-font-weight: @body-font-weight;
+@monospace-line-height: @body-line-height;
+@monospace-text-color: @body-text-color;
+
+
+/* Print text settings */
+
+/* Margin and indent */
+@print-paragraph-margin: @y;
+@print-block-indent: (3 * @x);
+
+/* Body text */
+@print-body-font-family: @font-sans-serif-1;
+@print-body-font-size: 9pt;
+@print-body-font-weight: @body-font-weight;
+@print-body-line-height: @body-line-height;
+@print-body-text-color: @color-grayscale-16;
+
+/* Links */
+@print-link-color: #0066FF;
+@print-link-color-visited: @print-link-color;
+@print-link-color-active: @print-link-color;
+@print-link-color-hover: @print-link-color;
+@print-link-text-decoration: none;
+@print-link-text-decoration-hover: underline;
+
+/* Heading 1 */
+@print-heading-1-font-family: @print-body-font-family;
+@print-heading-1-font-weight: bold;
+@print-heading-1-font-size: 18pt;
+@print-heading-1-line-height: (3 * @y);
+@print-heading-1-text-color: @color-grayscale-16;
+@print-heading-1-margin-top: (3 * @y);
+@print-heading-1-margin-bottom: @y;
+@print-heading-1-text-transform: none;
+@print-heading-1-letter-spacing: normal;
+
+/* Heading 2 */
+@print-heading-2-font-family: @print-heading-1-font-family;
+@print-heading-2-font-weight: @print-heading-1-font-weight;
+@print-heading-2-font-size: 14pt;
+@print-heading-2-line-height: @print-heading-1-line-height;
+@print-heading-2-text-color: @print-heading-1-text-color;
+@print-heading-2-margin-top: @print-heading-1-margin-top;
+@print-heading-2-margin-bottom: @print-heading-1-margin-bottom;
+@print-heading-2-text-transform: @print-heading-1-text-transform;
+@print-heading-2-letter-spacing: @print-heading-1-letter-spacing;
+
+/* Heading 3 */
+@print-heading-3-font-family: @print-heading-2-font-family;
+@print-heading-3-font-weight: @print-heading-2-font-weight;
+@print-heading-3-font-size: 12pt;
+@print-heading-3-line-height: @print-heading-2-line-height;
+@print-heading-3-text-color: @print-heading-2-text-color;
+@print-heading-3-margin-top: @print-heading-2-margin-top;
+@print-heading-3-margin-bottom: @print-heading-2-margin-bottom;
+@print-heading-3-text-transform: @print-heading-2-text-transform;
+@print-heading-3-letter-spacing: @print-heading-2-letter-spacing;
+
+/* Heading 4 */
+@print-heading-4-font-family: @print-heading-3-font-family;
+@print-heading-4-font-weight: @print-heading-3-font-weight;
+@print-heading-4-font-size: 11pt;
+@print-heading-4-line-height: @print-heading-3-line-height;
+@print-heading-4-text-color: @print-heading-3-text-color;
+@print-heading-4-margin-top: @print-heading-3-margin-top;
+@print-heading-4-margin-bottom: @print-heading-3-margin-bottom;
+@print-heading-4-text-transform: @print-heading-3-text-transform;
+@print-heading-4-letter-spacing: @print-heading-3-letter-spacing;
+
+/* Heading 5 */
+@print-heading-5-font-family: @print-heading-4-font-family;
+@print-heading-5-font-weight: @print-heading-4-font-weight;
+@print-heading-5-font-size: 10pt;
+@print-heading-5-line-height: @print-heading-4-line-height;
+@print-heading-5-text-color: @print-heading-4-text-color;
+@print-heading-5-margin-top: @print-heading-4-margin-top;
+@print-heading-5-margin-bottom: @print-heading-4-margin-bottom;
+@print-heading-5-text-transform: @print-heading-4-text-transform;
+@print-heading-5-letter-spacing: @print-heading-4-letter-spacing;
+
+/* Heading 6 */
+@print-heading-6-font-family: @print-heading-5-font-family;
+@print-heading-6-font-weight: @print-heading-5-font-weight;
+@print-heading-6-font-size: 9pt;
+@print-heading-6-line-height: @print-heading-5-line-height;
+@print-heading-6-text-color: @print-heading-5-text-color;
+@print-heading-6-margin-top: @print-heading-5-margin-top;
+@print-heading-6-margin-bottom: @print-heading-5-margin-bottom;
+@print-heading-6-text-transform: @print-heading-5-text-transform;
+@print-heading-6-letter-spacing: @print-heading-5-letter-spacing;
+
+/* Monospace */
+@print-monospace-font-family: @font-monospace-1;
+@print-monospace-font-size: @print-body-font-size;
+@print-monospace-font-weight: @print-body-font-weight;
+@print-monospace-line-height: @print-body-line-height;
+@print-monospace-text-color: @print-body-text-color;
+
+
+/* Other elements */
+
+/* Table */
+@table-text-color: @body-text-color;
+@table-color: transparent;
+@table-border-color: @color-grayscale-4;
+@table-border-width: 1px;
+@table-header-text-color: @table-text-color;
+@table-header-color: @color-grayscale-3;
+@table-header-color-hover: lighten(@table-header-color, 10%);
+@table-header-color-active: darken(@table-header-color, 10%);
+@table-header-border-color: @table-border-color;
+@table-header-border-width: @table-border-width;
+@table-footer-text-color: @table-text-color;
+@table-footer-color: @color-grayscale-2;
+@table-footer-color-hover: lighten(@table-footer-color, 10%);
+@table-footer-color-active: darken(@table-footer-color, 10%);
+@table-footer-border-color: @table-border-color;
+@table-footer-border-width: @table-border-width;
+
+/* Button */
+@button-font-family: @body-font-family;
+@button-font-size: @body-font-size;
+@button-font-weight: @body-font-weight;
+@button-line-height: @body-line-height;
+@button-height: (2.6 * @y);
+@button-line-fill: (0.2 * @y);
+@button-padding-horizontal: @x;
+@button-color: @color-grayscale-3;
+@button-color-default: @color-grayscale-4;
+@button-color-hover: @color-grayscale-2;
+@button-color-active: @color-grayscale-5;
+@button-color-disabled: @color-grayscale-2;
+@button-text-color: @color-grayscale-16;
+@button-text-color-default: @button-text-color;
+@button-text-color-hover: @button-text-color;
+@button-text-color-active: @button-text-color;
+@button-text-color-disabled: @color-grayscale-6;
+@button-border-color: @color-grayscale-6;
+@button-border-color-default: @button-border-color;
+@button-border-color-hover: @button-border-color;
+@button-border-color-active: @button-border-color;
+@button-border-color-disabled: @color-grayscale-3;
+@button-border-width: 0;
+@button-border-style: solid;
+@button-border-style-active: solid;
+
+/* Text input */
+@text-input-font-family: @font-sans-serif-1;
+@text-input-font-size: (1.4 * @y);
+@text-input-font-weight: normal;
+@text-input-line-height: (2 * @y);
+@text-input-height: (2.6 * @y);
+@text-input-line-fill: (0.2 * @y);
+@text-input-color: @color-grayscale-1;
+@text-input-color-required: #FFFFCC;
+@text-input-color-disabled: @color-grayscale-2;
+@text-input-text-color: @color-grayscale-16;
+@text-input-text-color-required: @text-input-text-color;
+@text-input-text-color-disabled: @color-grayscale-6;
+@text-input-border-color: @color-grayscale-5;
+@text-input-border-color-required: @text-input-border-color;
+@text-input-border-color-disabled: @text-input-border-color;
+@text-input-border-width: 1px;
+@text-input-border-style: solid;
+@text-input-border-style-active: solid;
+
+/* Select input */
+@select-font-family: @text-input-font-family;
+@select-font-size: @text-input-font-size;
+@select-font-weight: @text-input-font-weight;
+@select-line-height: @text-input-line-height;
+@select-height: @text-input-height;
+@select-line-fill: @text-input-line-fill;
+@select-color: @text-input-color;
+@select-color-required: @text-input-color-required;
+@select-color-disabled: @text-input-color-disabled;
+@select-text-color: @text-input-text-color;
+@select-text-color-required: @text-input-text-color-required;
+@select-text-color-disabled: @text-input-text-color-disabled;
+@select-border-color: @text-input-border-color;
+@select-border-color-required: @text-input-border-color-required;
+@select-border-color-disabled: @text-input-border-color-disabled;
+@select-border-width: @text-input-border-width;
+@select-border-style: @text-input-border-style;
+@select-border-style-active: @text-input-border-style-active;
+
+/* Text area */
+@text-area-font-family: @text-input-font-family;
+@text-area-font-size: @text-input-font-size;
+@text-area-font-weight: @text-input-font-weight;
+@text-area-line-height: @text-input-line-height;
+@text-area-height: (13.6 * @y);
+@text-area-line-fill: @text-input-line-fill;
+@text-area-color: @text-input-color;
+@text-area-color-required: @text-input-color-required;
+@text-area-color-disabled: @text-input-color-disabled;
+@text-area-text-color: @text-input-text-color;
+@text-area-text-color-required: @text-input-text-color-required;
+@text-area-text-color-disabled: @text-input-text-color-disabled;
+@text-area-border-color: @text-input-border-color;
+@text-area-border-color-required: @text-input-border-color-required;
+@text-area-border-color-disabled: @text-input-border-color-disabled;
+@text-area-border-width: @text-input-border-width;
+@text-area-border-style: @text-input-border-style;
+@text-area-border-style-active: @text-input-border-style-active;
+
+/* Fieldset */
+@fieldset-fill: (2 * @x);
+@fieldset-border-color: @color-grayscale-4;
+@fieldset-border-width: 2px;
+
+/* Horizontal ruler */
+@hr-height: 2px;
+@hr-color: @color-grayscale-4;

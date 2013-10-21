@@ -1,0 +1,51 @@
+/* Breadcrumbs styles (sub theme: keep the file) */
+
+
+// TODO: Kirjoita tyylit uusiksi
+/* Breadcrumbs */
+.breadcrumbs {
+	.list-float;
+	color: @breadcrumbs-text-color;
+	font-family: @breadcrumbs-font-family;
+	font-size: @breadcrumbs-font-size;
+	font-weight: @breadcrumbs-font-weight;
+	line-height: @breadcrumbs-line-height;
+	text-decoration: @breadcrumbs-text-decoration;
+	li {
+		margin-left: @breadcrumbs-item-margin;
+		&:first-child {
+			margin-left: 0px;
+		}
+		> a {
+			.no-focus;
+			cursor: pointer;
+			&, 
+			&:visited, 
+			&:hover, 
+			&:active {
+				color: @breadcrumbs-text-color;
+				text-decoration: @breadcrumbs-text-decoration;
+			}
+			&:hover {
+				color: @breadcrumbs-text-color-hover;
+				text-decoration: @breadcrumbs-text-decoration-hover;
+			}
+		}
+		&.active {
+			&, 
+			> a, 
+			> a:visited, 
+			> a:hover, 
+			> a:active {
+				color: @breadcrumbs-text-color-active;
+				font-style: @breadcrumbs-font-style-active;
+				font-weight: @breadcrumbs-font-weight-active;
+			}
+			> a:hover {
+				color: @breadcrumbs-text-color-hover;
+				text-decoration: @breadcrumbs-text-decoration-hover;
+			}
+		}
+	}
+	.preset-breadcrumbs;
+}

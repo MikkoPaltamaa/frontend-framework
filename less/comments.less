@@ -1,0 +1,82 @@
+/* Comments styles (sub theme: keep the file) */
+
+
+// TODO: Kirjoita tyylit uusiksi
+/* Comments */
+.comments {
+	margin-top: (3 * @y);
+	.comment {
+		margin-top: (3 * @y);
+		&:first-child {
+			margin-top: (2 * @y);
+		}
+		footer {
+			.float-clear;
+			.dim;
+			margin-top: (2 * @y);
+			.avatar {
+				display: block;
+				float: left;
+				margin-right: @gutter-width;
+			}
+		}
+		.content {
+			margin-top: (2 * @y);
+			.field {
+				margin-top: (2 * @y);
+				&:first-child {
+					margin-top: 0px;
+				}
+			}
+		}
+		.comment-links {
+			margin-top: (2 * @y);
+			ul {
+				list-style: none;
+				margin: 0px;
+				li {
+					display: inline;
+					margin-left: @x;
+					&:first-child {
+						margin-left: 0px;
+					}
+					a,
+					a:visited,
+					a:active,
+					a:hover {
+						color: @link-color;
+					}
+				}
+			}
+		}
+	}
+	.preset-comments;
+}
+
+/* Comments Drupal adapter */
+#comments {
+	.comments;
+}
+
+/* Comment form */
+.comment-form {
+	input[type='text'] {
+		width: (30 * @x - 6px);
+	}
+	.form-actions {
+		margin-top: (2 * @y);
+		input {
+			.preset-button;
+			margin-left: @x;
+			&:first-child {
+				margin-left: 0px;
+			}
+		}
+	}
+	.preset-comment-form;
+}
+
+/* Comment form Drupal adapter */
+#comment-form {
+	.comment-form;
+}

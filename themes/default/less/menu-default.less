@@ -1,0 +1,218 @@
+/* Menu styles (sub theme: replace the file) */
+
+
+/* Linear menu settings */
+@menu-linear-text-color-active: @link-color;
+@menu-linear-font-weight-active: bold;
+@menu-linear-font-style-active: normal;
+
+/* Inline menu settings */
+@menu-inline-text-color-active: @link-color;
+@menu-inline-font-weight-active: bold;
+@menu-inline-font-style-active: normal;
+@menu-inline-item-margin: (2 * @x - 4px);
+
+/* Basic menu settings */
+@menu-basic-font-family: @body-font-family;
+@menu-basic-font-size: @body-font-size;
+@menu-basic-font-weight: @body-font-weight;
+@menu-basic-font-weight-active: bold;
+@menu-basic-font-style-active: normal;
+@menu-basic-line-height: @body-line-height;
+@menu-basic-text-color: @link-color;
+@menu-basic-text-color-hover: @link-color-hover;
+@menu-basic-text-color-active: @body-text-color;
+@menu-basic-text-color-disabled: @color-grayscale-6;
+@menu-basic-text-decoration: @link-text-decoration;
+@menu-basic-text-decoration-hover: @link-text-decoration-hover;
+@menu-basic-item-margin-horizontal: (2 * @x);
+@menu-basic-item-margin-vertical: @paragraph-margin;
+
+/* Tree menu settings */
+@menu-tree-font-family: @body-font-family;
+@menu-tree-font-size: @body-font-size;
+@menu-tree-font-weight: @body-font-weight;
+@menu-tree-font-weight-active: bold;
+@menu-tree-font-style-active: normal;
+@menu-tree-line-height: @body-line-height;
+@menu-tree-text-color: @color-grayscale-16;
+@menu-tree-text-color-hover: @link-color-hover;
+@menu-tree-text-color-active: @link-color-active;
+@menu-tree-text-color-disabled: @color-grayscale-6;
+@menu-tree-text-decoration: none;
+@menu-tree-text-decoration-hover: @link-text-decoration-hover;
+@menu-tree-item-margin: (@menu-tree-font-size + @x);
+
+/* Bar menu settings */
+@menu-bar-font-family: @body-font-family;
+@menu-bar-font-size: @body-font-size;
+@menu-bar-font-weight: @body-font-weight;
+@menu-bar-line-height: @body-line-height;
+@menu-bar-color: @color-grayscale-3;
+@menu-bar-color-hover: @color-grayscale-5;
+@menu-bar-color-active: @color-grayscale-4;
+@menu-bar-color-disabled: @color-grayscale-2;
+@menu-bar-text-color: @color-grayscale-16;
+@menu-bar-text-color-hover: @menu-bar-text-color;
+@menu-bar-text-color-active: @menu-bar-text-color;
+@menu-bar-text-color-disabled: @color-grayscale-6;
+@menu-bar-padding: 0px;
+@menu-bar-item-padding: (0.5 * @y) @x;
+
+/* Dropdown bar menu settings */
+@menu-bar-dropdown-min-width: @col-width-2;
+
+/* Column menu settings */
+@menu-col-font-family: @body-font-family;
+@menu-col-font-size: @body-font-size;
+@menu-col-font-weight: @body-font-weight;
+@menu-col-line-height: @body-line-height;
+@menu-col-color: @color-grayscale-3;
+@menu-col-color-hover: @color-grayscale-5;
+@menu-col-color-active: @color-grayscale-4;
+@menu-col-color-disabled: @color-grayscale-2;
+@menu-col-text-color: @color-grayscale-16;
+@menu-col-text-color-hover: @menu-col-text-color;
+@menu-col-text-color-active: @menu-col-text-color;
+@menu-col-text-color-disabled: @color-grayscale-6;
+@menu-col-padding: 0px;
+@menu-col-item-padding: (0.5 * @y) @x;
+
+/* Dropdown bar menu settings */
+@menu-col-dropdown-min-width: @col-width-2;
+
+
+/* Menu preset */
+.preset-menu {}
+
+/* Menu item preset */
+.preset-menu-item {}
+
+/* Linear menu preset */
+.preset-menu-linear {}
+
+/* Inline menu preset */
+.preset-menu-inline {}
+
+/* Basic menu preset */
+.preset-menu-basic {}
+
+/* Tree menu preset */
+.preset-menu-tree {
+	li {
+		> a:before {
+			.icon-font('check-empty', @menu-tree-text-color);
+			display: inline-block;
+			float: left; 
+			padding-right: @x;
+		}
+		&.expanded {
+			> a:before {
+				.icon-font('caret-down');
+			}
+		}
+		&.collapsed {
+			> a:before {
+				.icon-font('caret-right');
+			}
+		}
+	}
+}
+
+/* Bar menu preset */
+.preset-menu-bar {
+	li {
+		> a {
+			position: relative;
+		}
+		&.expanded, 
+		&.collapsed {
+			> a {
+				padding-right: (3 * @x);
+				&:after {
+					.icon-font('caret-down');
+					display: inline-block;
+					padding: (0.5 * @y) 0px;
+					position: absolute;
+					right: (0.5 * @x);
+					top: 0px;
+					width: (2 * @x);
+				}
+			}
+		}
+	}
+}
+
+/* Dropdown bar menu preset */
+.preset-menu-bar-dropdown {
+	li {
+		li {
+			&.expanded, 
+			&.collapsed {
+				> a {
+					&:after {
+						.icon-font('caret-right');
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Column menu preset */
+.preset-menu-col {
+	li {
+		> a {
+			position: relative;
+		}
+		&.expanded, 
+		&.collapsed {
+			> a {
+				padding-right: (3 * @x);
+				&:after {
+					display: inline-block;
+					padding: (0.5 * @y) 0px;
+					position: absolute;
+					right: (0.5 * @x);
+					top: 0px;
+					width: (2 * @x);
+				}
+			}
+		}
+		&.collapsed {
+			> a {
+				&:after {
+					.icon-font('caret-right');
+				}
+			}
+		}
+		&.expanded {
+			> a {
+				&:after {
+					.icon-font('caret-down');
+				}
+			}
+		}
+		li {
+			> a {
+				padding-left: (3 * @x);
+			}
+			li {
+				> a {
+					padding-left: (6 * @x);
+				}
+				li {
+					> a {
+						padding-left: (9 * @x);
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Dropdown column menu preset */
+.preset-menu-col-dropdown {}
+
+/* Minimized menu preset */
+.preset-menu-minimized {}

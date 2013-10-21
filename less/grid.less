@@ -1,0 +1,273 @@
+/* Grid styles (keep the file) */
+
+
+/* Column width shortcuts */
+@col-width-1: @col-width;
+@col-width-2: (2 * @col-width + @gutter-width);
+@col-width-3: (3 * @col-width + 2 * @gutter-width);
+@col-width-4: (4 * @col-width + 3 * @gutter-width);
+@col-width-5: (5 * @col-width + 4 * @gutter-width);
+@col-width-6: (6 * @col-width + 5 * @gutter-width);
+@col-width-7: (7 * @col-width + 6 * @gutter-width);
+@col-width-8: (8 * @col-width + 7 * @gutter-width);
+@col-width-9: (9 * @col-width + 8 * @gutter-width);
+@col-width-10: (10 * @col-width + 9 * @gutter-width);
+@col-width-11: (11 * @col-width + 10 * @gutter-width);
+@col-width-12: (12 * @col-width + 11 * @gutter-width);
+@col-width-13: (13 * @col-width + 12 * @gutter-width);
+@col-width-14: (14 * @col-width + 13 * @gutter-width);
+@col-width-15: (15 * @col-width + 14 * @gutter-width);
+@col-width-16: (16 * @col-width + 15 * @gutter-width);
+
+/* Column + gutter width shortcuts */
+@col-gutter-width-1: (@col-width-1 + @gutter-width);
+@col-gutter-width-2: (@col-width-2 + @gutter-width);
+@col-gutter-width-3: (@col-width-3 + @gutter-width);
+@col-gutter-width-4: (@col-width-4 + @gutter-width);
+@col-gutter-width-5: (@col-width-5 + @gutter-width);
+@col-gutter-width-6: (@col-width-6 + @gutter-width);
+@col-gutter-width-7: (@col-width-7 + @gutter-width);
+@col-gutter-width-8: (@col-width-8 + @gutter-width);
+@col-gutter-width-9: (@col-width-9 + @gutter-width);
+@col-gutter-width-10: (@col-width-10 + @gutter-width);
+@col-gutter-width-11: (@col-width-11 + @gutter-width);
+@col-gutter-width-12: (@col-width-12 + @gutter-width);
+@col-gutter-width-13: (@col-width-13 + @gutter-width);
+@col-gutter-width-14: (@col-width-14 + @gutter-width);
+@col-gutter-width-15: (@col-width-15 + @gutter-width);
+@col-gutter-width-16: (@col-width-16 + @gutter-width);
+
+
+/* Grid column */
+.col(@grid-col-width: '', @grid-gutter-width: @gutter-width, @grid-gutter-height: @gutter-height) {
+	float: left;
+	margin-bottom: @grid-gutter-height;
+	margin-left: @grid-gutter-width;
+	position: relative;
+	&:first-child {
+		.row-break;
+	}
+}
+.col(@grid-col-width: '', @grid-gutter-width: @gutter-width, @grid-gutter-height: @gutter-height) when not (@grid-col-width = '') {
+	width: @grid-col-width;
+}
+
+/* Grid row */
+.row(@grid-row-height: '') {
+	position: relative;
+}
+.row(@grid-row-height: '') when not (@grid-row-height = '') {
+	height: @grid-row-height;
+}
+
+/* Grid */
+.grid(@grid-col-width: '', @row-length: '', @grid-gutter-width: @gutter-width, @grid-gutter-height: @gutter-height)  {
+	.float-fix;
+	position: relative;
+	& > * {
+		.col(@grid-col-width, @grid-gutter-width, @grid-gutter-height);
+	}
+	.row-length(@row-length);
+}
+
+/* Row break */
+.row-break {
+	//clear: left !important;
+	//margin-left: 0px !important;
+	clear: left;
+	margin-left: 0px;
+}
+
+/* Automatic row break */
+.auto-row-break {
+	@media screen, handheld, projection, tv {
+		//clear: left !important;
+		clear: left;
+	}
+}
+
+/* No row breaks */
+.no-row-breaks(@grid-gutter-width: @gutter-width) {
+	margin-left: -@grid-gutter-width;
+	& > :first-child {
+		margin-left: @grid-gutter-width;
+	}
+}
+
+/* Row length */
+.row-length(@length) when not (@length = '') {
+	& > :first-child {
+		.row-break;
+	}
+}
+.row-length(@length) when (@length = 1) {
+	& > *, 
+	& > .break-1 {
+		.row-break; // IE8 fix, must be inside its own block because IE8 ignores the whole block with nth-child selector
+	} 
+	& > :nth-child(1n + 1) {
+		.row-break;
+	}
+}
+.row-length(@length) when (@length = 2) {
+	& > .break-2 {
+		.row-break; // IE8 fix, must be inside its own block because IE8 ignores the whole block with nth-child selector
+	} 
+	& > :nth-child(2n + 1) {
+		.row-break;
+	}
+}
+.row-length(@length) when (@length = 3) {
+	& > .break-3 {
+		.row-break; // IE8 fix, must be inside its own block because IE8 ignores the whole block with nth-child selector
+	}
+	& > :nth-child(3n + 1) {
+		.row-break;
+	}
+}
+.row-length(@length) when (@length = 4) {
+	& > .break-4 {
+		.row-break; // IE8 fix, must be inside its own block because IE8 ignores the whole block with nth-child selector
+	}
+	& > :nth-child(4n + 1) {
+		.row-break;
+	}
+}
+.row-length(@length) when (@length = 5) {
+	& > .break-5 {
+		.row-break; // IE8 fix, must be inside its own block because IE8 ignores the whole block with nth-child selector
+	}
+	& > :nth-child(5n + 1) {
+		.row-break;
+	}
+}
+.row-length(@length) when (@length = 6) {
+	& > .break-6 {
+		.row-break; // IE8 fix, must be inside its own block because IE8 ignores the whole block with nth-child selector
+	}
+	& > :nth-child(6n + 1) {
+		.row-break;
+	}
+}
+.row-length(@length) when (@length = 7) {
+	& > .break-7 {
+		.row-break; // IE8 fix, must be inside its own block because IE8 ignores the whole block with nth-child selector
+	} 
+	& > :nth-child(7n + 1) {
+		.row-break;
+	}
+}
+.row-length(@length) when (@length = 8) {
+	& > .break-8 {
+		.row-break; // IE8 fix, must be inside its own block because IE8 ignores the whole block with nth-child selector
+	}
+	& > :nth-child(8n + 1) {
+		.row-break;
+	}
+}
+.row-length(@length) when (@length = 9) {
+	& > .break-9 {
+		.row-break; // IE8 fix, must be inside its own block because IE8 ignores the whole block with nth-child selector
+	}
+	& > :nth-child(9n + 1) {
+		.row-break;
+	}
+}
+.row-length(@length) when (@length = 10) {
+	& > .break-10 {
+		.row-break; // IE8 fix, must be inside its own block because IE8 ignores the whole block with nth-child selector
+	}
+	& > :nth-child(10n + 1) {
+		.row-break;
+	}
+}
+.row-length(@length) when (@length = 11) {
+	& > .break-11 {
+		.row-break; // IE8 fix, must be inside its own block because IE8 ignores the whole block with nth-child selector
+	}
+	& > :nth-child(11n + 1) {
+		.row-break;
+	}
+}
+.row-length(@length) when (@length = 12) {
+	& > .break-12 {
+		.row-break; // IE8 fix, must be inside its own block because IE8 ignores the whole block with nth-child selector
+	}
+	& > :nth-child(12n + 1) {
+		.row-break;
+	}
+}
+.row-length(@length) when (@length = 13) {
+	& > .break-13 {
+		.row-break; // IE8 fix, must be inside its own block because IE8 ignores the whole block with nth-child selector
+	}
+	& > :nth-child(13n + 1) {
+		.row-break;
+	}
+}
+.row-length(@length) when (@length = 14) {
+	& > .break-14 {
+		.row-break; // IE8 fix, must be inside its own block because IE8 ignores the whole block with nth-child selector
+	}
+	& > :nth-child(14n + 1) {
+		.row-break;
+	}
+}
+.row-length(@length) when (@length = 15) {
+	& > .break-15 {
+		.row-break; // IE8 fix, must be inside its own block because IE8 ignores the whole block with nth-child selector
+	}
+	& > :nth-child(15n + 1) {
+		.row-break;
+	}
+}
+.row-length(@length) when (@length = 16) {
+	& > .break-16 {
+		.row-break; // IE8 fix, must be inside its own block because IE8 ignores the whole block with nth-child selector
+	}
+	& > :nth-child(16n + 1) {
+		.row-break;
+	}
+}
+
+
+/* Pull (moves column left) */
+.pull(@amount: @col-gutter-width-1) {
+	right: @amount;
+}
+
+/* Push (moves column right) */
+.push(@amount: @col-gutter-width-1) {
+	left: @amount;
+}
+
+/* Lift column (moves up) */
+.lift(@amount: @row-gutter-height-1) {
+	bottom: @amount;
+}
+
+/* Lower column (moves down) */
+.lower(@amount: @row-gutter-height-1) {
+	top: @amount;
+}
+
+
+/* Pad left (adds left padding) */
+.pad-left(@amount: @col-gutter-width-1) {
+	padding-left: @amount;
+}
+
+/* Pad right (adds right padding) */
+.pad-right(@amount: @col-gutter-width-1) {
+	padding-right: @amount;
+}
+
+/* Pad top (adds top padding) */
+.pad-top(@amount: @row-gutter-height-1) {
+	padding-top: @amount;
+}
+
+/* Pad bottom (adds bottom padding) */
+.pad-bottom(@amount: @row-gutter-height-1) {
+	padding-right: @amount;
+}

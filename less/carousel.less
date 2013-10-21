@@ -1,0 +1,131 @@
+/* Carousel styles (sub theme: keep the file) */
+
+
+// TODO: Vaihda plugari omaan ja kirjoita tyylit uusiksi
+/* Carousel */
+.carousel {
+	position: relative;
+	.views-slideshow-controls-text-previous,
+	.views-slideshow-controls-text-next,
+	.views-slideshow-controls-text-pause {
+		position: absolute;
+		z-index: 50;
+		a {
+			background-position: center center;
+			background-repeat: no-repeat;
+			display: block;
+			height: (3 * @y);
+			overflow: hidden;
+			text-indent: -9999px;
+			width: (3 * @x);
+		}
+	}
+	.views-slideshow-controls-text-previous,
+	.views-slideshow-controls-text-next {
+		margin-top: (-1.5 * @y);
+		top: 50%;
+	}
+	.views-slideshow-controls-text-previous {
+		background-image: url(../img/carousel-arrow-left.png);
+		left: @x;
+	}
+	.views-slideshow-controls-text-next {
+		background-image: url(../img/carousel-arrow-right.png);
+		right: @x;
+	}
+	.views-slideshow-controls-text-pause {
+		background-image: url(../img/carousel-pause.png);
+		bottom: @y;
+		right: @x;
+		&.active {
+			background-image: url(../img/carousel-pause-active.png);
+		}
+	}
+	&.pager-bullets,
+	&.pager-images {
+		.widget_pager {
+			position: absolute;
+			z-index: 50;
+			div {
+				display: inline;
+			}
+			.views-slideshow-pager-field-item {
+				cursor: pointer;
+				display: inline-block;
+			}
+		}
+	}
+	&.pager-bullets {
+		.widget_pager {
+			padding: (1.5 * @y) (0 * @x);
+			.views-slideshow-pager-field-item {
+				background-image: url(../img/carousel-pager.png);
+				background-position: center center;
+				background-repeat: no-repeat;
+				height: (2 * @y);
+				overflow: hidden;
+				text-indent: -9999px;
+				width: (2 * @x);
+				&.active {
+					background-image: url(../img/carousel-pager-active.png);
+				}
+			}
+		}
+	}
+	&.pager-images {
+		.widget_pager {
+			padding: (0.5 * @y) (0.5 * @x);
+			.views-slideshow-pager-field-item {
+				padding: (0.5 * @y) (0.5 * @x);
+			}
+		}
+	}
+	&.pager-center {
+		.widget_pager {
+			left: 25%;
+			width: 50%;
+			text-align: center;
+			.views-slideshow-pager-field-item {
+				margin-left: -2px;
+				margin-right: -2px;
+			}
+		}
+	}
+	&.pager-top {
+		.widget_pager {
+			top: 0px;
+		}
+	}
+	&.pager-bottom {
+		.widget_pager {
+			bottom: 0px;
+		}
+	}
+	&.pager-left {
+		.widget_pager {
+			left: 0px;
+			.views-slideshow-pager-field-item {
+				margin-right: -4px;
+			}
+		}
+	}
+	&.pager-right {
+		.widget_pager {
+			right: 0px;
+			.views-slideshow-pager-field-item {
+				margin-left: -4px;
+			}
+		}
+	}
+	.preset-carousel;
+}
+*+html .carousel {
+	&.pager-bullets,
+	&.pager-images {
+		.widget_pager {
+			.views-slideshow-pager-field-item {
+				display: inline;
+			}
+		}
+	}
+}

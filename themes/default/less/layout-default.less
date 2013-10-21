@@ -1,0 +1,212 @@
+/* Layout styles (sub theme: replace the file) */
+
+
+/* Global styles */
+@media all {}
+
+
+/* Screen styles */
+@media screen, handheld, projection, tv {
+	
+	/* Page */
+	@media @layout-default {
+		#page {
+			width: (@col-width-12 + (2 * @gutter-width));
+		}
+	}
+	@media @layout-narrow {
+		#page {
+			width: (@col-width-9 + (2 * @gutter-width));
+		}
+	}
+	
+	/* Branding zone */
+	@media @layout-default, @layout-narrow {
+		#zone-branding {
+			min-height: (9 * @y);
+			//z-index: 100; // IE7 fix
+		}
+	}
+	@media @layout-fluid {
+		#zone-branding {
+			.float-fix;
+			padding-top: (2 * @y);
+			padding-bottom: (2 * @y);
+		}
+	}
+	
+	/* Site logo */
+	@media @layout-default, @layout-narrow {
+		#site-logo {
+			left: 0px;
+			position: absolute;
+			top: (3 * @y);
+		}
+	}
+	@media @layout-fluid {
+		#site-logo {
+			float: left;
+			margin-right: (4 * @x);
+			margin-bottom: (2 * @y);
+			&:last-child {
+				margin-bottom: 0px;
+			}
+		}
+	}
+	
+	/* Language menu */
+	#navigation-language {
+		a {
+			color: @body-text-color !important;
+			&:hover {
+				color: @link-color-hover !important;
+			}
+		}
+	}
+	@media @layout-default, @layout-narrow {
+		#navigation-language {
+			position: absolute;
+			right: (0 * @x);
+			top: (3 * @x);
+			> ul {
+				.menu-inline;
+			}
+		}
+	}
+	@media @layout-fluid {
+		#navigation-language {
+			float: left;
+			margin-bottom: (2 * @y);
+			margin-right: (2 * @x);
+			&:last-child {
+				margin-bottom: 0px;
+			}
+			> ul {
+				.menu-linear;
+			}
+		}
+	}
+	
+	/* Main navigation zone */
+	#zone-main-navigation {
+		background-color: @menu-bar-color;
+	}
+	
+	/* Main navigation */
+	@media @layout-default, @layout-narrow {
+		#navigation-main {
+			//z-index: 50;
+			position: relative;
+			z-index: 1;
+			> ul {
+				.menu-bar-dropdown;
+			}
+			.menu-mobile {
+				display: none;
+			}
+		}
+	}
+	@media @layout-fluid {
+		#navigation-main {
+			clear: left;
+			margin-bottom: (2 * @y);
+			&:last-child {
+				margin-bottom: 0px;
+			}
+			> ul {
+				display: none;
+			}
+		}
+	}
+	
+	/* Content section */
+	#section-content {
+		padding-top: (4 * @y);
+		padding-bottom: (4 * @y);
+	}
+	
+	/* Footer zone */
+	#zone-footer {
+		padding-top: (2 * @y);
+		padding-bottom: (2 * @y);
+	}
+
+	/* Footer region */
+	@media @layout-default, @layout-narrow {
+		#region-footer {
+			height: (2 * @y);
+		}
+	}
+
+	/* Utility navigation */
+	#navigation-utility {
+		a {
+			color: @body-text-color !important;
+			&:hover {
+				color: @link-color-hover !important;
+			}
+		}
+	}
+	@media @layout-default, @layout-narrow {
+		#navigation-utility {
+			position: absolute;
+			right: 0px;
+			top: 0px;
+			> ul {
+				.menu-inline;
+			}
+		}
+	}
+	@media @layout-fluid {
+		#navigation-utility {
+			> ul {
+				.menu-linear;
+			}
+		}
+	}
+
+	/* Copyright */
+	@media @layout-default, @layout-narrow {
+		.copyright {
+			left: 0px;
+			position: absolute;
+			top: 0px;
+		}
+	}
+
+	/* Put the footer to the bottom of the page on short pages */
+	@media @layout-default, @layout-narrow {
+		html {
+			.fixed-footer((8 * @y));
+			.fixed-footer-page-background;
+		}
+	}
+	
+}
+
+/* Print styles */
+@media print {
+	
+	/* Site logo */
+	#site-logo {
+		img {
+			width: 120px;
+		}
+	}
+	
+	/* Language navigation */
+	#navigation-language {
+		display: none;
+	}
+	
+	/* Main navigation zone */
+	#zone-main-navigation {
+		display: none;
+	}
+
+	/* Utility navigation */
+	#navigation-utility {
+		display: none;
+	}
+	
+}

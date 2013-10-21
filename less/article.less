@@ -1,0 +1,175 @@
+/* Article styles (sub theme: keep the file) */
+
+
+// TODO: Kirjoita tyylit uusiksi
+/* Article */
+.article {
+	.field {
+		margin-bottom: (2 * @y);
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+	.preset-article;
+}
+
+/* Article Drupal adapter */
+.node.view-mode-full, 
+.taxonomy-term.view-mode-full {
+	.article;
+}
+
+/* Article teaser */
+.article-teaser {
+	.field {
+		margin-bottom: @y;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+	.preset-article-teaser;
+}
+
+/* Article teaser Drupal adapter */
+.node, 
+.taxonomy-term {
+	&.view-mode-teaser {
+		.article-teaser;
+	}
+}
+
+/* Article grid */
+.article-grid {
+	.field {
+		margin-bottom: @y;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+	.preset-article-grid;
+}
+
+/* Article grid Drupal adapter */
+.node, 
+.taxonomy-term {
+	&.view-mode-grid {
+		.article-grid;
+	}
+}
+
+/* Article title */
+.article-title {
+	.field {
+		margin-bottom: 0px;
+	}
+	.preset-article-title;
+}
+
+/* Article title Drupal adapter */
+.node, 
+.taxonomy-term {
+	&.view-mode-title {
+		.article-title;
+	}
+}
+
+/* Image field */
+.field.image {
+	/*
+	a, 
+	span {
+		display: inline-block;
+	}
+	*/
+	.preset-field-image;
+}
+
+/* Body field */
+.field.body {
+	img {
+		height: auto;
+		max-width: 100%;
+	}
+	.preset-field-body;
+}
+
+/* Image field floating */
+.field-image-float(@side, @float-width, @image-width: '') {
+	.float-fix;
+	.field.image {
+		float: @side;
+		margin-bottom: 0px;
+	}
+}
+.field-image-float(@side, @float-width, @image-width: '') when (@side = left) {
+	.field {
+		margin-left: @float-width;
+	}
+	.field.image {
+		margin-left: 0px;
+	}
+}
+.field-image-float(@side, @float-width, @image-width: '') when (@side = right) {
+	.field {
+		margin-right: @float-width;
+	}
+	.field.image {
+		margin-right: 0px;
+	}
+}
+.field-image-float(@side, @float-width, @image-width: '') when not (@image-width = '') {
+	.field.image {
+		width: @image-width;
+	}
+}
+
+// TODO: Check if still valid
+/*
+.node, 
+.taxonomy-term {
+	header {
+		margin-bottom: (2 * @y);
+	}
+	footer {
+		.float-fix;
+		.preset-dim;
+		margin-bottom: (2 * @y);
+		.avatar {
+			display: block;
+			float: left;
+			margin-right: @gutter-width;
+		}
+	}
+	.node-links {
+		margin-top: (2 * @y);
+		ul {
+			list-style: none;
+			margin: 0px;
+			li {
+				display: inline;
+				margin-left: @x;
+				&:first-child {
+					margin-left: 0px;
+				}
+				a,
+				a:visited,
+				a:active,
+				a:hover {
+					color: @link-color;
+				}
+			}
+		}
+	}
+}
+*/
+
+
+/* Print styles */
+@media print {
+
+	/* Field */
+	.field {
+		page-break-inside: avoid;
+	}
+
+}

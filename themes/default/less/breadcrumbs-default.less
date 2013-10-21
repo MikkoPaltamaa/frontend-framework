@@ -1,0 +1,43 @@
+/* Breadcrumbs styles (sub theme: replace the file) */
+
+
+// TODO: Kirjoita tyylit uusiksi
+/* Breadcrumbs settings */
+@breadcrumbs-font-family: @body-font-family;
+@breadcrumbs-font-size: (@body-font-size - 2px);
+@breadcrumbs-font-weight: @body-font-weight;
+@breadcrumbs-font-weight-active: bold;
+@breadcrumbs-font-style-active: normal;
+@breadcrumbs-line-height: @body-line-height;
+@breadcrumbs-text-color: @color-grayscale-10;
+@breadcrumbs-text-color-hover: @link-color-hover;
+@breadcrumbs-text-color-active: @breadcrumbs-text-color;
+@breadcrumbs-text-color-disabled: @color-grayscale-6;
+@breadcrumbs-text-decoration: none;
+@breadcrumbs-text-decoration-hover: @link-text-decoration-hover;
+@breadcrumbs-item-margin: @x;
+
+
+/* Breadcrumbs presets */
+.preset-breadcrumbs {
+	li {
+		// TODO: Remove old styles
+		//background-repeat: no-repeat;
+		//background-position: @x center;
+		//background-image: url(../img/breadcrumbs-separator.png);
+		//&:first-child {
+			//background-image: none;
+		//}
+		&:before {
+			.icon-font('arrow-right', @color-grayscale-4, @breadcrumbs-font-size);
+			display: inline-block;
+			float: left;
+			margin-right: @x;
+		}
+		&:first-child {
+			&:before {
+				content: none;
+			}
+		}
+	}
+}
