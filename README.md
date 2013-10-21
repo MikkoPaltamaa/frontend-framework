@@ -1,4 +1,4 @@
 Frontend Framework, FF
 ==================
 
-Documantation under construction.
+Documentation under construction.
