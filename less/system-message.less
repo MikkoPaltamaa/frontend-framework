@@ -11,10 +11,6 @@
 	margin-bottom: @y;
 	padding: @system-message-padding;
 	.preset-system-message;
-	/*
-	&.information {
-		.system-message-information;
-	}
 	&.success {
 		.system-message-success;
 	}
@@ -24,15 +20,12 @@
 	&.failure {
 		.system-message-failure;
 	}
-	*/
-}
-
-/* Information system message */
-.system-message-information {
-	.system-message;
-	background-color: @system-message-information-color;
-	color: @system-message-information-text-color;
-	.preset-system-message-information;
+	&.information {
+		.system-message-information;
+	}
+	&.question {
+		.system-message-question;
+	}
 }
 
 /* Success system message */
@@ -59,9 +52,24 @@
 	.preset-system-message-failure;
 }
 
+/* Information system message */
+.system-message-information {
+	.system-message;
+	background-color: @system-message-information-color;
+	color: @system-message-information-text-color;
+	.preset-system-message-information;
+}
+
+/* Question system message */
+.system-message-question {
+	.system-message;
+	background-color: @system-message-question-color;
+	color: @system-message-question-text-color;
+	.preset-system-message-question;
+}
+
 /* System message Drupal adapter */
 .messages {
-	.system-message;
 	&.status {
 		.system-message-success;
 	}

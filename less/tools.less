@@ -1,16 +1,50 @@
 /* Tool styles (keep the file) */
 
 
+/* Layout debug tool toggle link */
+#link-toggle-layout-debug {
+	background-color: #999999;
+	display: block;
+	font-size: 14px;
+	line-height: 20px;
+	min-width: 20px;
+	opacity: 0.25;
+	padding: 5px;
+	position: fixed;
+	right: 20px;
+	text-align: center;
+	top: 20px;
+	z-index: 9999;
+	&, 
+	&:visited, 
+	&:hover, 
+	&:active {
+		color: #ffffff;
+		text-decoration: none;
+	}
+	&:before {
+		.icon-font('th');
+	}
+	&.active {
+		-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+		opacity: 1;
+	}
+}
 
 /* Layout indicators */
 .layout-debug {
 	body:before {
-		background-color: #CCCCCC;
-		color: #000000;
+		background-color: #999999;
+		-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+		color: #FFFFFF;
+		font-size: 14px;
+		line-height: 20px;
 		position: fixed;
 		padding: 5px 10px;
-		bottom: 30px;
-		left: 30px;
+		bottom: 20px;
+		left: 20px;
 		z-index: 9999;
 	}
 }
@@ -48,8 +82,32 @@
 
 /* Grid helper tool */
 .layout-debug {
+		
+	/* Grid background for the zones */
+	*:hover {
+		.zone {
+			background-color: transparent !important;
+			background-image: @grid-bg !important;
+			background-repeat: repeat !important;
+			background-position: @grid-offset-x @grid-offset-y !important;
+			background-attachment: scroll !important;
+			//background-position: center center !important;
+			//background-attachment: fixed !important;
+			*:hover {
+				background-color: transparent !important;
+				background-image: none !important;
+			}
+		}
+	}
 
 	#page {
+		
+		/* Hover effect for the all elements */
+		*:hover {
+			-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+			-moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+			box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+		}
 		
 		/* Hover effect for the sections, zones, regions, blocks */
 		.section, 
@@ -63,30 +121,6 @@
 				box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
 				*/
 			}
-		}
-		
-		/* Grid background for the zones */
-		.zone {
-			&:hover {
-				background-color: transparent !important;
-				background-image: @grid-bg !important;
-				background-repeat: repeat !important;
-				background-position: @grid-offset-x @grid-offset-y !important;
-				background-attachment: scroll !important;
-				//background-position: center center !important;
-   				//background-attachment: fixed !important;
-			}
-			*:hover {
-				background-color: transparent !important;
-				background-image: none !important;
-			}
-		}
-		
-		/* Hover effect for the all elements */
-		*:hover {
-			-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
-			-moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
-			box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
 		}
 		
 		/* Hover effect for the sections, zones, regions, blocks */

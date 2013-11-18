@@ -31,12 +31,15 @@
 @color-7: #CCCCCC; // ?
 @color-8: #CCCCCC; // ?
 
-/* Fonts */
+/* Common fonts (don't change) */
 @font-sans-serif-1: 'Arial', 'Helvetica', 'FreeSans', sans-serif;
 @font-sans-serif-2: 'Verdana', 'Geneva', 'FreeSans', sans-serif;
 @font-serif-1: 'Georgia', 'Times New Roman', 'Times', serif;
 @font-serif-2: 'Times New Roman', 'Times', serif;
 @font-monospace-1: 'Courier New', 'Courier', 'FreeMono', monospace;
+
+/* Fonts */
+@font-1: @font-sans-serif-1;
 
 
 /* Screen text settings */
@@ -46,7 +49,7 @@
 @block-indent: (3 * @x);
 
 /* Body text */
-@body-font-family: @font-sans-serif-1;
+@body-font-family: @font-1;
 @body-font-weight: normal;
 @body-font-size: (1.4 * @y);
 @body-line-height: (2 * @y);

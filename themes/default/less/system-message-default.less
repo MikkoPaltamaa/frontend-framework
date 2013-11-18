@@ -5,14 +5,16 @@
 @system-message-padding: @y @x;
 @system-message-color: @color-grayscale-2;
 @system-message-text-color: @color-grayscale-16;
-@system-message-information-color: #CCDDFF;
-@system-message-information-text-color: #003366;
 @system-message-success-color: #CCFFCC;
 @system-message-success-text-color: #006600;
 @system-message-notice-color: #FFFFCC;
 @system-message-notice-text-color: #666600;
 @system-message-failure-color: #FFCCCC;
 @system-message-failure-text-color: #660000;
+@system-message-information-color: #CCDDFF;
+@system-message-information-text-color: #003366;
+@system-message-question-color: #DDCCFF;
+@system-message-question-text-color: #330066;
 
 
 /* System message preset */
@@ -26,19 +28,11 @@
 	}
 }
 
-/* Information system message preset */
-.preset-system-message-information {
-	padding-left: (4 * @x);
-	&:before {
-		.icon-font('info-sign');
-	}
-}
-
 /* Success system message preset */
 .preset-system-message-success {
 	padding-left: (4 * @x);
 	&:before {
-		.icon-font('ok-sign');
+		.icon-font('check-circle');
 	}
 }
 
@@ -46,7 +40,7 @@
 .preset-system-message-notice {
 	padding-left: (4 * @x);
 	&:before {
-		.icon-font('warning-sign');
+		.icon-font('exclamation-triangle');
 	}
 }
 
@@ -54,7 +48,23 @@
 .preset-system-message-failure {
 	padding-left: (4 * @x);
 	&:before {
-		.icon-font('remove-sign');
+		.icon-font('times-circle');
+	}
+}
+
+/* Information system message preset */
+.preset-system-message-information {
+	padding-left: (4 * @x);
+	&:before {
+		.icon-font('info-circle');
+	}
+}
+
+/* Question system message preset */
+.preset-system-message-question {
+	padding-left: (4 * @x);
+	&:before {
+		.icon-font('question-circle');
 	}
 }
 

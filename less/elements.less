@@ -85,12 +85,13 @@
 		font-weight: bold;
 	}
 	tfoot {
-		td {
+		td, 
+		th {
 			font-style: italic;
 		}
 	}
-	th, 
-	td {
+	td, 
+	th {
 		vertical-align: top;
 	}
 	th {
@@ -286,16 +287,16 @@
 		margin-top: -1px;
 		top: 1px;
 		position: relative;
-		th, 
-		td {
+		td, 
+		th {
 			padding-top: (@y / 2 - @table-border-width);
 			padding-right: @x;
 			padding-bottom: (@y / 2);
 			padding-left: (@x - @table-border-width);
 		}
 		tfoot {
-			th, 
-			td {
+			td, 
+			th {
 				padding-top: (@y / 2 - @table-footer-border-width);
 				padding-right: @x;
 				padding-bottom: (@y / 2);
@@ -303,8 +304,8 @@
 			}
 		}
 		thead {
-			th, 
-			td {
+			td, 
+			th {
 				padding-top: (@y / 2 - @table-header-border-width);
 				padding-right: @x;
 				padding-bottom: (@y / 2);
@@ -430,12 +431,14 @@
 		line-height: @text-input-line-height;
 		margin: @text-input-line-fill 0px;
 		padding: ((@text-input-height - @text-input-line-height) / 2 - @text-input-border-width) (0.3 * @x);
-		&[required] {
+		&[required], 
+		&:required {
 			background-color: @text-input-color-required;
 			border-color: @text-input-border-color-required;
 			color: @text-input-text-color-required;
 		}
-		&[disabled] {
+		&[disabled], 
+		&:disabled {
 			background-color: @text-input-color-disabled;
 			border-color: @text-input-border-color-disabled;
 			color: @text-input-text-color-disabled;
@@ -482,7 +485,8 @@
 			border-style: @button-border-style-active;
 			color: @button-text-color-active;
 		}
-		&[disabled] {
+		&[disabled], 
+		&:disabled {
 			background-color: @button-color-disabled !important;
 			border-color: @button-border-color-disabled !important;
 			border-style: @button-border-style !important;
@@ -503,10 +507,12 @@
 		height: 26px;
 		position: relative;
 		margin: 2px 0px;
-		&[required] {
+		&[required], 
+		&:required {
 			color: @text-input-text-color-required;
 		}
-		&[disabled] {
+		&[disabled], 
+		&:disabled {
 			color: @text-input-text-color-disabled;
 		}
 	}
@@ -523,12 +529,14 @@
 		line-height: @select-line-height;
 		margin: @select-line-fill 0px;
 		padding: 0px;
-		&[required] {
+		&[required], 
+		&:required {
 			background-color: @select-color-required;
 			border-color: @select-border-color-required;
 			color: @select-text-color-required;
 		}
-		&[disabled] {
+		&[disabled], 
+		&:disabled {
 			background-color: @select-color-disabled;
 			border-color: @select-border-color-disabled;
 			color: @select-text-color-disabled;
@@ -550,12 +558,14 @@
 		line-height: @text-area-line-height;
 		margin: @text-area-line-fill 0px;
 		padding: 0px (0.3 * @x);
-		&[required] {
+		&[required], 
+		&:required {
 			background-color: @text-area-color-required;
 			border-color: @text-area-border-color-required;
 			color: @text-area-text-color-required;
 		}
-		&[disabled] {
+		&[disabled], 
+		&:disabled {
 			background-color: @text-area-color-disabled;
 			border-color: @text-area-border-color-disabled;
 			color: @text-area-text-color-disabled;
@@ -790,8 +800,8 @@
 	sup {
 		line-height: (0.3 * @body-line-height);
 	}
-	th, 
-	td {
+	td, 
+	th {
 		line-height: @body-line-height;
 	}
 
@@ -912,9 +922,9 @@
 	sub, 
 	summary, 
 	sup, 
-	th, 
-	textarea, 
 	td, 
+	textarea, 
+	th, 
 	video {
 		page-break-inside: avoid;
 	}

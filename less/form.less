@@ -69,14 +69,155 @@ form#user-login {
 }
 
 
+/* Styled checkboxes */
+.checkboxes-styled {
+	input[type=checkbox] + label:before {
+		background-color: @button-color;
+		border-style: @button-border-style;
+		border-width: @button-border-width;
+		color: @button-text-color;
+		cursor: pointer;
+		display: inline-block;
+		font-family: @button-font-family;
+		font-weight: @button-font-weight;
+		font-size: @button-font-size;
+		line-height: @button-line-height;
+		margin-right: @x;
+		outline: none;
+		position: relative;
+		vertical-align: middle;
+		white-space: nowrap;
+		content: " ";
+		&:hover {
+			background-color: @button-color-hover;
+			border-color: @button-border-color-hover;
+			color: @button-text-color-hover;
+		}
+		&:active, 
+		.active {
+			background-color: @button-color-active;
+			border-color: @button-border-color-active;
+			border-style: @button-border-style-active;
+			color: @button-text-color-active;
+		}	
+	}
+	input[type=checkbox][disabled] + label:before, 
+	input[type=checkbox]:disabled + label:before {
+		background-color: @button-color-disabled !important;
+		border-color: @button-border-color-disabled !important;
+		border-style: @button-border-style !important;
+		color: @button-text-color-disabled !important;
+	}
+	input[type=checkbox][checked] + label:before, 
+	input[type=checkbox]:checked + label:before {
+		content: "&check;";
+		content: "&#x02713;";
+		content: "&#10003;";
+	}
+	input[type=checkbox] {
+		display: none;
+	}
+	/* IE8 and IE7 fix */
+	// TODO: Which one was correct?
+	input[type=checkbox] {
+		display: block\9;
+	}
+	input[type=checkbox] {
+		display: inline-block\9;
+	}
+	label:before {
+		display: none\9;
+	}
+	.preset-checkboxes-styled;
+}
+
+/* Styled radios */
+.radios-styled {
+	input[type=radio] + label:before {
+		background-color: @button-color;
+		border-style: @button-border-style;
+		border-width: @button-border-width;
+		color: @button-text-color;
+		cursor: pointer;
+		display: inline-block;
+		font-family: @button-font-family;
+		font-weight: @button-font-weight;
+		font-size: @button-font-size;
+		line-height: @button-line-height;
+		margin-right: @x;
+		outline: none;
+		position: relative;
+		vertical-align: middle;
+		white-space: nowrap;
+		content: " ";
+		&:hover {
+			background-color: @button-color-hover;
+			border-color: @button-border-color-hover;
+			color: @button-text-color-hover;
+		}
+		&:active, 
+		.active {
+			background-color: @button-color-active;
+			border-color: @button-border-color-active;
+			border-style: @button-border-style-active;
+			color: @button-text-color-active;
+		}	
+	}
+	input[type=radio][disabled] + label:before, 
+	input[type=radio]:disabled + label:before {
+		background-color: @button-color-disabled !important;
+		border-color: @button-border-color-disabled !important;
+		border-style: @button-border-style !important;
+		color: @button-text-color-disabled !important;
+	}
+	input[type=radio][checked] + label:before, 
+	input[type=radio]:checked + label:before {
+		content: "&bull;";
+		content: "&#x02022;";
+		content: "&#8226;";
+	}
+	input[type=radio] {
+		display: none;
+	}
+	/* IE8 and IE7 fix */
+	// TODO: Which one was correct?
+	input[type=radio] {
+		display: block\9;
+	}
+	input[type=radio] {
+		display: inline-block\9;
+	}
+	label:before {
+		display: none\9;
+	}
+	.preset-radios-styled;
+}
+
+/* Styled selects */
+.selects-styled {
+	// TODO
+	.preset-selects-styled;
+}
+
+/* Styled files */
+.files-styled {
+	// TODO
+	.preset-files-styled;
+}
+
+
+/* Styled placeholders */
+.placeholder-styled {
+	.preset-placeholder-styled;
+}
+
+
 /* Form honeypot spam detection */
 .form-check, 
 .form-honeypot {
 	display: none;
 }
 
-
-// TODO: Valitse kumpaa merkint‰‰ k‰ytet‰‰n sivustoilla ja poista toinen t‰‰lt‰
 /* Form honeypot spam detection Drupal adapter */
 #webform-component-empty, 
 .homepage-textfield {

@@ -23,3 +23,66 @@
 
 /* Form hint preset */
 .preset-form-hint {}
+
+
+/* Styled checkboxes preset */
+.preset-checkboxes-styled {
+	input[type=checkbox] + label:before {
+		.icon-font();
+	}
+	input[type=checkbox][checked] + label:before, 
+	input[type=checkbox]:checked + label:before {
+		.icon-font('check');
+	}
+}
+
+/* Styled radios preset */
+.preset-radios-styled {
+	input[type=radio] + label:before {
+		.icon-font();
+	}
+	input[type=radio][checked] + label:before, 
+	input[type=radio]:checked + label:before {
+		.icon-font('circle');
+	}
+}
+
+/* Styled selects preset */
+.preset-selects-styled {}
+
+/* Styled files preset */
+.preset-files-styled {}
+
+
+/* Styled placeholders preset */
+.preset-placeholder-styled {
+	&:placeholder, 
+	&:-webkit-input-placeholder, 
+	&:-moz-placeholder, 
+	&:-ms-input-placeholder, 
+	&:-o-placeholder {
+		font-style: italic;
+		color: @color-grayscale-4;
+	}
+	// These cannot be separated by a comma, for some unknown reason
+	&::placeholder {
+		font-style: italic;
+		color: @color-grayscale-4;
+	}
+	&::-webkit-input-placeholder {
+		font-style: italic;
+		color: @color-grayscale-4;
+	}
+	&::-moz-placeholder {
+		font-style: italic;
+		color: @color-grayscale-4;
+	}
+	&::-ms-input-placeholder {
+		font-style: italic;
+		color: @color-grayscale-4;
+	}
+	&::-o-placeholder {
+		font-style: italic;
+		color: @color-grayscale-4;
+	}
+}
